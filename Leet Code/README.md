@@ -12,4 +12,5 @@ Solutions for the problems available on leetcode.
 8. Roman to Integer
 9. String to Integer (atoi)
 10. ZigZag Conversion
-11. Valid Paranthesis
+11. Valid Parenthesis
+12. Longest Common Prefix
