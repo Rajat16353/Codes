@@ -14,3 +14,4 @@ Solutions for the problems available on leetcode.
 10. ZigZag Conversion
 11. Valid Parenthesis
 12. Longest Common Prefix
+13. Longest Palindromic substring
