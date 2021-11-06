@@ -15,3 +15,5 @@ Solutions for the problems available on leetcode.
 11. Valid Parenthesis
 12. Longest Common Prefix
 13. Longest Palindromic substring
+14. Merge Two Sorted Lists
+15. Remove Duplicates from Sorted Array
