@@ -22,3 +22,5 @@ Solutions for the problems available on leetcode.
 18. Reverse Words in a String
 19. Ransom Note
 20. Number Complement
+21. Two sum II
+22. Two Sum IV - Input is a BST
