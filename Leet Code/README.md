@@ -24,3 +24,7 @@ Solutions for the problems available on leetcode.
 20. Number Complement
 21. Two sum II
 22. Two Sum IV - Input is a BST
+23. 3Sum
+24. 3Sum Closest
+25. Regular Expression Matching
+26. Implement strStr()
