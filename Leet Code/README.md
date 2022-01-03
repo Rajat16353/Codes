@@ -28,3 +28,6 @@ Solutions for the problems available on leetcode.
 24. 3Sum Closest
 25. Regular Expression Matching
 26. Implement strStr()
+27. Find the town judge
+28. Letter combinations of a phone
+29. Remove element
