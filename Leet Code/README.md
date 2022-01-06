@@ -31,3 +31,5 @@ Solutions for the problems available on leetcode.
 27. Find the town judge
 28. Letter combinations of a phone
 29. Remove element
+30. Complement of Base 10 Integer
+31. Car Pooling
