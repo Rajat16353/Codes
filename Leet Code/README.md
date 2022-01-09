@@ -36,3 +36,4 @@ Solutions for the problems available on leetcode.
 32. Search insert position
 33. Count and say
 34. 4Sum
+35. Find First and Last Position of Element in Sorted Array
