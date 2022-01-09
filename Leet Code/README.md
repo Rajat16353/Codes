@@ -33,3 +33,6 @@ Solutions for the problems available on leetcode.
 29. Remove element
 30. Complement of Base 10 Integer
 31. Car Pooling
+32. Search insert position
+33. Count and say
+34. 4Sum
