@@ -38,3 +38,5 @@ Solutions for the problems available on leetcode.
 34. 4Sum
 35. Find First and Last Position of Element in Sorted Array
 36. Add Binary
+37. Sum of Root To Leaf Binary Numbers
+38. Remove Nth Node From End of List
