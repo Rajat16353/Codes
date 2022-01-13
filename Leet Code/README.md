@@ -40,3 +40,6 @@ Solutions for the problems available on leetcode.
 36. Add Binary
 37. Sum of Root To Leaf Binary Numbers
 38. Remove Nth Node From End of List
+39. Reverse Nodes in k-Group
+40. Maximum Subarray
+41. Insert into a Binary Search Tree
