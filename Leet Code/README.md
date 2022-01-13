@@ -43,3 +43,7 @@ Solutions for the problems available on leetcode.
 39. Reverse Nodes in k-Group
 40. Maximum Subarray
 41. Insert into a Binary Search Tree
+42. Minimum Number of Arrows to Burst Balloons
+43. Generate Parentheses
+44. Swap Nodes in Pairs
+45. Merge Intervals
