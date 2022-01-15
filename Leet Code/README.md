@@ -47,3 +47,8 @@ Solutions for the problems available on leetcode.
 43. Generate Parentheses
 44. Swap Nodes in Pairs
 45. Merge Intervals
+46. Jump Game IV
+47. Length of Last Word
+48. Jump Game
+49. Jump Game II
+50. Single Number

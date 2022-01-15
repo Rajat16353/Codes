@@ -87,6 +87,7 @@ Constraints:
 0 <= s.length <= 200
 s consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'. """
 
+# First approach
 
 class Solution:
     def myAtoi(self, str: str) -> int:
@@ -122,3 +123,18 @@ class Solution:
         elif int(num) > pow(2, 31)-1:
             return pow(2, 31)-1
         return int(num)
+
+# Second approach
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        length, i, sign, res = len(s), 0, +1, ''
+        
+        while i < length and s[i] == ' ': i = i + 1
+            
+        if i < length and s[i] in ('-', '+'): 
+            sign, i = -1 if s[i] == '-' else +1, i + 1
+            
+        while i < length and s[i].isdigit(): 
+            res, i = res + s[i], i + 1
+        
+        return max( -2**31, min( sign * int(res or 0), 2**31 - 1 ) )
