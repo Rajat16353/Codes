@@ -52,3 +52,6 @@ Solutions for the problems available on leetcode.
 48. Jump Game
 49. Jump Game II
 50. Single Number
+51. Valid Sudoku
+52. Binary Tree Inorder Traversal
+53. Word Pattern
