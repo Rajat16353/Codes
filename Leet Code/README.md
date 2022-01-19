@@ -55,3 +55,5 @@ Solutions for the problems available on leetcode.
 51. Valid Sudoku
 52. Binary Tree Inorder Traversal
 53. Word Pattern
+54. Binary Tree Preorder Traversal
+55. Evaluate Division
