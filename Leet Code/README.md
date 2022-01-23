@@ -58,3 +58,4 @@ Solutions for the problems available on leetcode.
 54. Binary Tree Preorder Traversal
 55. Evaluate Division
 56. Set Matrix Zeroes
+57. Removing Minimum and Maximum From Array
