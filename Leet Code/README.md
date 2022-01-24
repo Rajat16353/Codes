@@ -59,3 +59,7 @@ Solutions for the problems available on leetcode.
 55. Evaluate Division
 56. Set Matrix Zeroes
 57. Removing Minimum and Maximum From Array
+58. Kth Largest Element in an Array
+59. 3rd Maximum Number
+60. Kth Largest Element in a Stream
+61. Find the Kth Largest Integer in the Array
