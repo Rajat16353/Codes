@@ -66,3 +66,4 @@ Solutions for the problems available on leetcode.
 62. Sort Colors
 63. Intersection of Two Arrays
 64. Rotate Array
+65. Find the Duplicate Number
