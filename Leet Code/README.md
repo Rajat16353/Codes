@@ -64,3 +64,5 @@ Solutions for the problems available on leetcode.
 60. Kth Largest Element in a Stream
 61. Find the Kth Largest Integer in the Array
 62. Sort Colors
+63. Intersection of Two Arrays
+64. Rotate Array
