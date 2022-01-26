@@ -83,3 +83,40 @@ class Solution {
         return median;
     }
 }
+
+
+// Binar search
+
+class Solution {
+    public double findMedianSortedArrays(int[] a, int[] b) {
+        int totalLen = (a.length + b.length);
+        int half = totalLen / 2;
+        if (a.length > b.length) {
+            int[] temp = new int[b.length];
+            temp = b;
+            b = a;
+            a = temp;
+        }   
+        int l = 0, r = a.length-1;
+        while(true) {
+            int i = r >= 0 ? (l + r)/ 2 : (l + r)/ 2 - 1;
+            int j = half - i - 2;
+            
+            double aLeft = i >= 0 ? a[i] : Double.NEGATIVE_INFINITY;
+            double aRight = (i+1) < a.length ? a[i+1] : Double.POSITIVE_INFINITY;
+            double bLeft = j >= 0 ? b[j] : Double.NEGATIVE_INFINITY;
+            double bRight = (j+1) < b.length ? b[j+1] : Double.POSITIVE_INFINITY;
+            
+            if (aLeft <= bRight && bLeft <= aRight) {
+                if (totalLen % 2 != 0)
+                    return Math.min(aRight, bRight);
+                else
+                    return (Math.max(aLeft, bLeft) + Math.min(aRight, bRight)) / 2;
+            }
+            else if (aLeft > bRight)
+                r = i - 1;
+            else
+                l = i + 1;
+        }
+    }
+}
