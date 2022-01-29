@@ -7,3 +7,4 @@
 7. Cyclically rotate an array by one
 8. Minimum number of jumps
 9. Find duplicate in an array of N+1 Integers
+10. Minimize the Heights II
