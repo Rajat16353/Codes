@@ -67,3 +67,4 @@ Solutions for the problems available on leetcode.
 63. Intersection of Two Arrays
 64. Rotate Array
 65. Find the Duplicate Number
+66. Merge Sorted Array
