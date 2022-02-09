@@ -9,3 +9,5 @@
 9. Find duplicate in an array of N+1 Integers
 10. Minimize the Heights II
 11. Merge Intervals
+12. Merge without extra space
+13. Next Permutation

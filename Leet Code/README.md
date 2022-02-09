@@ -68,3 +68,4 @@ Solutions for the problems available on leetcode.
 64. Rotate Array
 65. Find the Duplicate Number
 66. Merge Sorted Array
+67. Next Permutation
