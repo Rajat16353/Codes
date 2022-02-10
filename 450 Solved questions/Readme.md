@@ -11,3 +11,4 @@
 11. Merge Intervals
 12. Merge without extra space
 13. Next Permutation
+14. Count Inversions

@@ -69,3 +69,4 @@ Solutions for the problems available on leetcode.
 65. Find the Duplicate Number
 66. Merge Sorted Array
 67. Next Permutation
+68. Global and Local Inversions
