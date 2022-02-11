@@ -119,3 +119,90 @@ class Solution
         return merge_sort(arr, temp, 0, arr.length-1);
     }
 }
+
+
+// without any extra space
+// { Driver Code Starts
+//Initial Template for Java
+
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+
+class Sorting
+{
+    public static void main (String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        long t = sc.nextLong();
+        
+        while(t-- > 0)
+        {
+            long n = sc.nextLong();
+            long arr[] = new long[(int)n];
+            
+            for(long i = 0; i < n; i++)
+             arr[(int)i] = sc.nextLong();
+             
+            System.out.println(new Solution().inversionCount(arr, n));
+            
+        }
+    }
+}
+// } Driver Code Ends
+
+
+//User function Template for Java
+
+class Solution
+{
+    // arr[]: Input Array
+    // N : Size of the Array arr[]
+    
+    private static long merge(long arr[], int left, int mid, int right) {
+        int i = 0, j = 0, k = left;
+        long inv_count = 0;
+        
+        long left_arr[] = Arrays.copyOfRange(arr, left, mid);
+        long right_arr[] = Arrays.copyOfRange(arr, mid, right+1);
+        
+        while(i < left_arr.length && j < right_arr.length) {
+            if (left_arr[i] <= right_arr[j])
+                arr[k++] = left_arr[i++];
+            else {
+                arr[k++] = right_arr[j++];
+                
+                inv_count += mid - (left+i);
+            }
+        }
+        
+        while(i < left_arr.length)
+            arr[k++] = left_arr[i++];
+        
+        while (j < right_arr.length)
+            arr[k++] = right_arr[j++];
+        
+        return inv_count;
+    }
+    
+    private static long merge_sort(long arr[], int left, int right) {
+        long inv_count = 0;
+        
+        if (left < right) {
+            int mid = (left + right)/2;
+            
+            inv_count += merge_sort(arr, left, mid);
+            inv_count += merge_sort(arr, mid+1, right);
+            
+            inv_count += merge(arr, left, mid+1, right);
+        }
+        return inv_count;
+    }
+    
+    //Function to count inversions in the array.
+    static long inversionCount(long arr[], long N)
+    {
+        // Your Code Here
+        return merge_sort(arr, 0, arr.length-1);
+    }
+}

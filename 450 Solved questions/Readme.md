@@ -12,3 +12,8 @@
 12. Merge without extra space
 13. Next Permutation
 14. Count Inversions
+15. Count pairs with given sum
+16. Triplet Sum in Array
+17. Find the median
+18. Best Time to Buy and Sell Stock
+19. Common elements

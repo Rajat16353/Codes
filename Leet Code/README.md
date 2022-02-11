@@ -70,3 +70,4 @@ Solutions for the problems available on leetcode.
 66. Merge Sorted Array
 67. Next Permutation
 68. Global and Local Inversions
+69. Best Time to Buy and Sell Stock
