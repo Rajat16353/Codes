@@ -71,3 +71,6 @@ Solutions for the problems available on leetcode.
 67. Next Permutation
 68. Global and Local Inversions
 69. Best Time to Buy and Sell Stock
+70. Rearrange Array Elements by Sign
+71. Maximum Product Subarray
+72. Longest consecutive subsequence

@@ -17,3 +17,9 @@
 17. Find the median
 18. Best Time to Buy and Sell Stock
 19. Common elements
+20. Maximising vacations
+21. Alternate Positive and negative numbers
+22. Subarray with 0 sum
+23. Factorials of large numbers
+24. Maximum Product Subarray
+25. Longest consecutive subsequence
