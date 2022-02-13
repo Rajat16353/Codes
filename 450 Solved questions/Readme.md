@@ -23,3 +23,8 @@
 23. Factorials of large numbers
 24. Maximum Product Subarray
 25. Longest consecutive subsequence
+26. find all elements that appear more than n/k times
+27. Maximum profit by buying and selling a share at most twice
+28. Array Subset of another array
+29. Trapping Rain Water
+30. Chocolate Distribution Problem

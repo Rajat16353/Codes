@@ -74,3 +74,7 @@ Solutions for the problems available on leetcode.
 70. Rearrange Array Elements by Sign
 71. Maximum Product Subarray
 72. Longest consecutive subsequence
+73. Majority Element II
+74. Majority Element
+75. Best Time to Buy and Sell Stock III
+76. Trapping Rain Water
