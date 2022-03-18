@@ -28,3 +28,5 @@
 28. Array Subset of another array
 29. Trapping Rain Water
 30. Chocolate Distribution Problem
+31. Minimum Size Subarray Sum
+32. Three way partitioning
