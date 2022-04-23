@@ -30,3 +30,5 @@
 30. Chocolate Distribution Problem
 31. Minimum Size Subarray Sum
 32. Three way partitioning
+33. Reverse String
+34. The Celebrity Problem
