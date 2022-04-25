@@ -82,3 +82,6 @@ Solutions for the problems available on leetcode.
 78. Shortest Subarray with Sum at Least K
 79. Reverse String
 80. Merge k Sorted Lists
+81. Combination Sum
+82. Permutations
+83. Rotate List
