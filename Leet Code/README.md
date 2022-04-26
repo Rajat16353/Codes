@@ -85,3 +85,5 @@ Solutions for the problems available on leetcode.
 81. Combination Sum
 82. Permutations
 83. Rotate List
+84. Minimum Path Sum
+85. Word Search
