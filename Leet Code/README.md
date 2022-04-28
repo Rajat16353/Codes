@@ -87,3 +87,5 @@ Solutions for the problems available on leetcode.
 83. Rotate List
 84. Minimum Path Sum
 85. Word Search
+86. Restore IP Addresses
+87. Validate Binary Search Tree
