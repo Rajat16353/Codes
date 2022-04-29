@@ -89,3 +89,6 @@ Solutions for the problems available on leetcode.
 85. Word Search
 86. Restore IP Addresses
 87. Validate Binary Search Tree
+88. Same Tree
+89. Symmetric Tree
+90. Binary Tree Level Order Traversal
