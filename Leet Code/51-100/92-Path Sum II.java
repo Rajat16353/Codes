@@ -68,8 +68,8 @@ class Solution {
     }
 }
 
-
 // Not creating new current list for every recursive call
+// Space complexity O(n)
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -108,5 +108,53 @@ class Solution {
         findPaths(root, targetSum, new ArrayList<>(), paths);
         
         return paths;
+    }
+}
+
+
+// Space Complexity O(1)
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public Node left;
+    public Node right;
+    public Node next;
+
+    public Node() {}
+    
+    public Node(int _val) {
+        val = _val;
+    }
+
+    public Node(int _val, Node _left, Node _right, Node _next) {
+        val = _val;
+        left = _left;
+        right = _right;
+        next = _next;
+    }
+};
+*/
+
+class Solution {    
+    public Node connect(Node root) {
+        if (root == null)
+            return null;
+        
+        Node cur = root, nextLev = cur.left;
+        
+        while(cur != null && nextLev != null) {
+            cur.left.next = cur.right;
+            if (cur.next != null) {
+                cur.right.next = cur.next.left;
+            }
+            
+            cur = cur.next;
+            if (cur == null) {
+                cur = nextLev;
+                nextLev = cur.left;
+            }
+        }
+        return root;
     }
 }
