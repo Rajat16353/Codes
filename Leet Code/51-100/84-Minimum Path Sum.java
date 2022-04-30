@@ -40,8 +40,7 @@ class Solution {
             for(int j = c-1; j > -1; j--) {
                 result[i][j] = grid[i][j] + Math.min(result[i+1][j], result[i][j+1]);
             }   
-        }
-            
+        }            
         return result[0][0];
     }
 }
