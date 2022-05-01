@@ -95,3 +95,4 @@ Solutions for the problems available on leetcode.
 91. Convert Sorted List to Binary Search Tree
 92. Path Sum II
 93. Populating Next Right Pointers in Each Node
+94. Word Ladder
