@@ -96,3 +96,16 @@ Solutions for the problems available on leetcode.
 92. Path Sum II
 93. Populating Next Right Pointers in Each Node
 94. Word Ladder
+95. Divide Two Integers
+96. Longest Substring Of All Vowels in Order
+97. Candy
+98. LRU Cache
+99. Min Stack
+100. Number of Islands
+101. Course Schedule
+102. Course Schedule II
+103. Design Add and Search Words Data Structure
+104. Word Search II
+105. Sliding Window Maximum
+106. Game of Life
+107. Find Median from Data Stream
