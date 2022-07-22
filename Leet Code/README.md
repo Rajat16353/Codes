@@ -109,3 +109,5 @@ Solutions for the problems available on leetcode.
 105. Sliding Window Maximum
 106. Game of Life
 107. Find Median from Data Stream
+108. Longest Common Subsequence
+109. Delete Operation for Two Strings
