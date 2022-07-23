@@ -3,8 +3,8 @@ with open(path_to_readme_file, 'r') as f:
     line = f.readlines();
     # print(line)
 data_to_write = line[0] + line[1] + line[2] + line[3]
-data_to_write = data_to_write + "| Sr. No | Name of the problem |\n"
-data_to_write = data_to_write + "| ------ | ------------------- |\n"
+data_to_write = data_to_write + "| Sr. No | Name of the problem | Sr. No | Name of the problem |\n"
+data_to_write = data_to_write + "| ------ | ------------------- | ------ | ------------------- |\n"
 
 line = line[4:]
 
@@ -23,7 +23,7 @@ for i in range (r):
     if i == r-1 and len(line)%2 != 0:
         data_to_write = data_to_write + "| " + line[i].split(' ', maxsplit=1)[0] + " | " + line[i].split(' ', maxsplit=1)[1] + " |"
     else:
-        data_to_write = data_to_write + "| "+line[i].split(' ', maxsplit=1)[0] + " | " + line[i].split(' ', maxsplit=1)[1] + " |\n"#    | " + line[r+i].split(' ', maxsplit=1)[0] + " | " + line[r+i].split(' ', maxsplit=1)[1] + " |\n"
+        data_to_write = data_to_write + "| "+line[i].split(' ', maxsplit=1)[0] + " | " + line[i].split(' ', maxsplit=1)[1] + " | " + line[r+i].split(' ', maxsplit=1)[0] + " | " + line[r+i].split(' ', maxsplit=1)[1] + " |\n"
     
 print(data_to_write)
 f.close()
