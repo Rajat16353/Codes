@@ -59,4 +59,4 @@ Solutions for the problems available on leetcode.
 | 53 | Word Pattern | 109 | Delete Operation for Two Strings |
 | 54 | Binary Tree Preorder Traversal | 110 | Target Sum |
 | 55 | Evaluate Division | 111 | Design HashMap |
-| 56 | Set Matrix Zeroes |
+| 56 | Set Matrix Zeroes | 112 | Subarray Sum Equals K |

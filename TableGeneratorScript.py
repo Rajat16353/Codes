@@ -32,3 +32,19 @@ f.close()
 with open(path_to_write_file, 'w') as f:
     f.write(data_to_write)
 f.close()
+
+import subprocess
+
+# This is our shell command, executed by Popen.
+
+p = subprocess.Popen("git add .", stdout=subprocess.PIPE, shell=True)
+
+print(p.communicate())
+
+p = subprocess.Popen('git commit -m "Add solutions"', stdout=subprocess.PIPE, shell=True)
+
+print(p.communicate())
+
+p = subprocess.Popen("git push", stdout=subprocess.PIPE, shell=True)
+
+print(p.communicate())
