@@ -1,5 +1,6 @@
-path_to_readme_file = "Leet Code/README.md"
-with open(path_to_readme_file, 'r') as f:
+path_to_read_file = "C:/Users/gupta/Documents/LeetCode Problems.txt"
+path_to_write_file = "Leet Code/README.md"
+with open(path_to_read_file, 'r') as f:
     line = f.readlines();
     # print(line)
 data_to_write = line[0] + line[1] + line[2] + line[3]
@@ -28,6 +29,6 @@ for i in range (r):
 print(data_to_write)
 f.close()
 
-with open(path_to_readme_file, 'w') as f:
+with open(path_to_write_file, 'w') as f:
     f.write(data_to_write)
 f.close()
