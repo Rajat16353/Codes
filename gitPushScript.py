@@ -1,5 +1,5 @@
 path_to_read_file = "C:/Users/gupta/Documents/LeetCode Problems.txt"
-path_to_write_file = "Leet Code/README.md"
+path_to_write_file = "Leet-Code/README.md"
 with open(path_to_read_file, 'r') as f:
     line = f.readlines();
     # print(line)
@@ -26,7 +26,7 @@ for i in range (r):
     else:
         data_to_write = data_to_write + "| "+line[i].split(' ', maxsplit=1)[0] + " | " + line[i].split(' ', maxsplit=1)[1] + " | " + line[r+i].split(' ', maxsplit=1)[0] + " | " + line[r+i].split(' ', maxsplit=1)[1] + " |\n"
     
-print(data_to_write)
+# print(data_to_write)
 f.close()
 
 with open(path_to_write_file, 'w') as f:
@@ -34,17 +34,47 @@ with open(path_to_write_file, 'w') as f:
 f.close()
 
 import subprocess
+import re
 
 # This is our shell command, executed by Popen.
+p = subprocess.Popen("git status", stdout=subprocess.PIPE, shell=True)
 
-p = subprocess.Popen("git add .", stdout=subprocess.PIPE, shell=True)
+status = p.communicate()[0].decode('UTF-8').split('\n')
 
-print(p.communicate())
+message = ''
 
-p = subprocess.Popen('git commit -m "Add solutions"', stdout=subprocess.PIPE, shell=True)
+i = 0
+while i < len(status):
+    if 'Changes not staged for commit:' in status[i]:
+        while i < len(status):
+            if status[i]:
+                break
+            message = re.sub(r"\s+", ' ', status[i][1:])
+            commitCommand = 'git commit -m "'+message.capitalize()+'"'
 
-print(p.communicate())
+            p = subprocess.Popen("git add " + message[10:], stdout=subprocess.PIPE, shell=True)
+            p.wait()
+            # print(p.communicate())
 
-p = subprocess.Popen("git push", stdout=subprocess.PIPE, shell=True)
+            p = subprocess.Popen(commitCommand, stdout=subprocess.PIPE, shell=True)
+            p.wait()
+            # print(p.communicate(input=message)[0].decode('UTF-8'))
+            i += 1
+    elif 'Untracked files:' in status[i]:
+        for stat in status[i+2:len(status)-3]:
+            file = re.sub(r"\s+", ' ', stat)
+            message = 'Add solutions for'+ file
+            commitCommand = 'git commit -m "'+message+'"'
 
-print(p.communicate())
+            p = subprocess.Popen("git add " + file, stdout=subprocess.PIPE, shell=True)
+            p.wait()
+            # print(p.communicate())
+
+            p = subprocess.Popen(commitCommand, stdout=subprocess.PIPE, shell=True)
+            p.wait()
+            # print(p.communicate(input=message)[0].decode('UTF-8'))
+        break
+    i += 1
+
+        # p = subprocess.Popen("git push", stdout=subprocess.PIPE, shell=True)
+        # print(p.communicate())
