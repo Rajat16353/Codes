@@ -54,7 +54,7 @@ while i < len(status):
             message = re.sub(r"\s+", ' ', status[i][1:])
             commitCommand = 'git commit -m "'+message.capitalize()+'"'
 
-            p = subprocess.Popen('git add "' + message[10:] + '"', stdout=subprocess.PIPE, shell=True)
+            p = subprocess.Popen('git add "' + re.sub(r'.+:\s+', '', message) + '"', stdout=subprocess.PIPE, shell=True)
             p.wait()
             print(p.communicate())
 
