@@ -48,7 +48,6 @@ for i in range (r):
         data_to_write = data_to_write + "| " + index1 + " | [" + name1 + "](https://github.com/Rajat16353/Codes/blob/master/" + link1 + ") |"
     else:
         data_to_write = data_to_write + "| "+ index1 + " | [" + name1 + "](https://github.com/Rajat16353/Codes/blob/master/" + link1+") | " + index2 + " | [" + name2 + "](https://github.com/Rajat16353/Codes/blob/master/"+link2+") |\n"
-        break
     
 # print(data_to_write)
 f.close()
