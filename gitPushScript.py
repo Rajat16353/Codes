@@ -25,6 +25,7 @@ while count < len(line):
     pathMap[count] = str(count-50) + '-' + str(count-1)
     count += 50
 pathMap[count] = str(count-50) + '-' + str(count-1)
+print(pathMap)
 
 for i in range (r):
     link1 = ''
@@ -36,15 +37,18 @@ for i in range (r):
     for key,value in pathMap.items():
         if (i < key):
             link1 = "Leet-Code/"+ value+"/"+ index1+"-"+ name1.replace(' ', '%20') +".java"
+            break
 
     for key, value in pathMap.items():
         if (r+i < key):
             link2 = "Leet-Code/"+ value+"/"+ index2+"-"+ name2.replace(' ', '%20') +".java"
+            break
 
     if i == r-1 and len(line)%2 != 0:
         data_to_write = data_to_write + "| " + index1 + " | [" + name1 + "](https://github.com/Rajat16353/Codes/blob/master/" + link1 + ") |"
     else:
         data_to_write = data_to_write + "| "+ index1 + " | [" + name1 + "](https://github.com/Rajat16353/Codes/blob/master/" + link1+") | " + index2 + " | [" + name2 + "](https://github.com/Rajat16353/Codes/blob/master/"+link2+") |\n"
+        break
     
 # print(data_to_write)
 f.close()
