@@ -4,59 +4,59 @@ Solutions for the problems available on leetcode.
 
 | Sr. No | Name of the problem | Sr. No | Name of the problem |
 | ------ | ------------------- | ------ | ------------------- |
-| 1 | Two Sum | 57 | Removing Minimum and Maximum From Array |
-| 2 | Add two Numbers | 58 | Kth Largest Element in an Array |
-| 3 | Longest Substring without Repeating Characters | 59 | 3rd Maximum Number |
-| 4 | Median of two sorted arrays | 60 | Kth Largest Element in a Stream |
-| 5 | Reverse Integer | 61 | Find the Kth Largest Integer in the Array |
-| 6 | Palindrome Number | 62 | Sort Colors |
-| 7 | Integer to Roman | 63 | Intersection of Two Arrays |
-| 8 | Roman to Integer | 64 | Rotate Array |
-| 9 | String to Integer (atoi) | 65 | Find the Duplicate Number |
-| 10 | ZigZag Conversion | 66 | Merge Sorted Array |
-| 11 | Valid Parenthesis | 67 | Next Permutation |
-| 12 | Longest Common Prefix | 68 | Global and Local Inversions |
-| 13 | Longest Palindromic substring | 69 | Best Time to Buy and Sell Stock |
-| 14 | Merge Two Sorted Lists | 70 | Rearrange Array Elements by Sign |
-| 15 | Remove Duplicates from Sorted Array | 71 | Maximum Product Subarray |
-| 16 | Container With Most Water | 72 | Longest consecutive subsequence |
-| 17 | Gray Code | 73 | Majority Element II |
-| 18 | Reverse Words in a String | 74 | Majority Element |
-| 19 | Ransom Note | 75 | Best Time to Buy and Sell Stock III |
-| 20 | Number Complement | 76 | Trapping Rain Water |
-| 21 | Two sum II | 77 | Minimum Size Subarray Sum |
-| 22 | Two Sum IV - Input is a BST | 78 | Shortest Subarray with Sum at Least K |
-| 23 | 3Sum | 79 | Reverse String |
-| 24 | 3Sum Closest | 80 | Merge k Sorted Lists |
-| 25 | Regular Expression Matching | 81 | Combination Sum |
-| 26 | Implement strStr() | 82 | Permutations |
-| 27 | Find the town judge | 83 | Rotate List |
-| 28 | Letter combinations of a phone | 84 | Minimum Path Sum |
-| 29 | Remove element | 85 | Word Search |
-| 30 | Complement of Base 10 Integer | 86 | Restore IP Addresses |
-| 31 | Car Pooling | 87 | Validate Binary Search Tree |
-| 32 | Search insert position | 88 | Same Tree |
-| 33 | Count and say | 89 | Symmetric Tree |
-| 34 | 4Sum | 90 | Binary Tree Level Order Traversal |
-| 35 | Find First and Last Position of Element in Sorted Array | 91 | Convert Sorted List to Binary Search Tree |
-| 36 | Add Binary | 92 | Path Sum II |
-| 37 | Sum of Root To Leaf Binary Numbers | 93 | Populating Next Right Pointers in Each Node |
-| 38 | Remove Nth Node From End of List | 94 | Word Ladder |
-| 39 | Reverse Nodes in k-Group | 95 | Divide Two Integers |
-| 40 | Maximum Subarray | 96 | Longest Substring Of All Vowels in Order |
-| 41 | Insert into a Binary Search Tree | 97 | Candy |
-| 42 | Minimum Number of Arrows to Burst Balloons | 98 | LRU Cache |
-| 43 | Generate Parentheses | 99 | Min Stack |
-| 44 | Swap Nodes in Pairs | 100 | Number of Islands |
-| 45 | Merge Intervals | 101 | Course Schedule |
-| 46 | Jump Game IV | 102 | Course Schedule II |
-| 47 | Length of Last Word | 103 | Design Add and Search Words Data Structure |
-| 48 | Jump Game | 104 | Word Search II |
-| 49 | Jump Game II | 105 | Sliding Window Maximum |
-| 50 | Single Number | 106 | Game of Life |
-| 51 | Valid Sudoku | 107 | Find Median from Data Stream |
-| 52 | Binary Tree Inorder Traversal | 108 | Longest Common Subsequence |
-| 53 | Word Pattern | 109 | Delete Operation for Two Strings |
-| 54 | Binary Tree Preorder Traversal | 110 | Target Sum |
-| 55 | Evaluate Division | 111 | Design HashMap |
-| 56 | Set Matrix Zeroes | 112 | Subarray Sum Equals K |
+| 1 | [Two Sum](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/1-Two%20Sum.java) | 57 | [Removing Minimum and Maximum From Array](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/57-Removing%20Minimum%20and%20Maximum%20From%20Array.java) |
+| 2 | [Add two Numbers](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/2-Add%20two%20Numbers.java) | 58 | [Kth Largest Element in an Array](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/58-Kth%20Largest%20Element%20in%20an%20Array.java) |
+| 3 | [Longest Substring without Repeating Characters](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/3-Longest%20Substring%20without%20Repeating%20Characters.java) | 59 | [3rd Maximum Number](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/59-3rd%20Maximum%20Number.java) |
+| 4 | [Median of two sorted arrays](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/4-Median%20of%20two%20sorted%20arrays.java) | 60 | [Kth Largest Element in a Stream](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/60-Kth%20Largest%20Element%20in%20a%20Stream.java) |
+| 5 | [Reverse Integer](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/5-Reverse%20Integer.java) | 61 | [Find the Kth Largest Integer in the Array](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/61-Find%20the%20Kth%20Largest%20Integer%20in%20the%20Array.java) |
+| 6 | [Palindrome Number](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/6-Palindrome%20Number.java) | 62 | [Sort Colors](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/62-Sort%20Colors.java) |
+| 7 | [Integer to Roman](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/7-Integer%20to%20Roman.java) | 63 | [Intersection of Two Arrays](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/63-Intersection%20of%20Two%20Arrays.java) |
+| 8 | [Roman to Integer](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/8-Roman%20to%20Integer.java) | 64 | [Rotate Array](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/64-Rotate%20Array.java) |
+| 9 | [String to Integer (atoi)](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/9-String%20to%20Integer%20(atoi).java) | 65 | [Find the Duplicate Number](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/65-Find%20the%20Duplicate%20Number.java) |
+| 10 | [ZigZag Conversion](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/10-ZigZag%20Conversion.java) | 66 | [Merge Sorted Array](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/66-Merge%20Sorted%20Array.java) |
+| 11 | [Valid Parenthesis](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/11-Valid%20Parenthesis.java) | 67 | [Next Permutation](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/67-Next%20Permutation.java) |
+| 12 | [Longest Common Prefix](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/12-Longest%20Common%20Prefix.java) | 68 | [Global and Local Inversions](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/68-Global%20and%20Local%20Inversions.java) |
+| 13 | [Longest Palindromic substring](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/13-Longest%20Palindromic%20substring.java) | 69 | [Best Time to Buy and Sell Stock](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/69-Best%20Time%20to%20Buy%20and%20Sell%20Stock.java) |
+| 14 | [Merge Two Sorted Lists](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/14-Merge%20Two%20Sorted%20Lists.java) | 70 | [Rearrange Array Elements by Sign](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/70-Rearrange%20Array%20Elements%20by%20Sign.java) |
+| 15 | [Remove Duplicates from Sorted Array](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/15-Remove%20Duplicates%20from%20Sorted%20Array.java) | 71 | [Maximum Product Subarray](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/71-Maximum%20Product%20Subarray.java) |
+| 16 | [Container With Most Water](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/16-Container%20With%20Most%20Water.java) | 72 | [Longest consecutive subsequence](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/72-Longest%20consecutive%20subsequence.java) |
+| 17 | [Gray Code](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/17-Gray%20Code.java) | 73 | [Majority Element II](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/73-Majority%20Element%20II.java) |
+| 18 | [Reverse Words in a String](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/18-Reverse%20Words%20in%20a%20String.java) | 74 | [Majority Element](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/74-Majority%20Element.java) |
+| 19 | [Ransom Note](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/19-Ransom%20Note.java) | 75 | [Best Time to Buy and Sell Stock III](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/75-Best%20Time%20to%20Buy%20and%20Sell%20Stock%20III.java) |
+| 20 | [Number Complement](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/20-Number%20Complement.java) | 76 | [Trapping Rain Water](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/76-Trapping%20Rain%20Water.java) |
+| 21 | [Two sum II](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/21-Two%20sum%20II.java) | 77 | [Minimum Size Subarray Sum](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/77-Minimum%20Size%20Subarray%20Sum.java) |
+| 22 | [Two Sum IV - Input is a BST](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/22-Two%20Sum%20IV%20-%20Input%20is%20a%20BST.java) | 78 | [Shortest Subarray with Sum at Least K](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/78-Shortest%20Subarray%20with%20Sum%20at%20Least%20K.java) |
+| 23 | [3Sum](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/23-3Sum.java) | 79 | [Reverse String](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/79-Reverse%20String.java) |
+| 24 | [3Sum Closest](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/24-3Sum%20Closest.java) | 80 | [Merge k Sorted Lists](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/80-Merge%20k%20Sorted%20Lists.java) |
+| 25 | [Regular Expression Matching](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/25-Regular%20Expression%20Matching.java) | 81 | [Combination Sum](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/81-Combination%20Sum.java) |
+| 26 | [Implement strStr()](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/26-Implement%20strStr().java) | 82 | [Permutations](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/82-Permutations.java) |
+| 27 | [Find the town judge](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/27-Find%20the%20town%20judge.java) | 83 | [Rotate List](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/83-Rotate%20List.java) |
+| 28 | [Letter combinations of a phone](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/28-Letter%20combinations%20of%20a%20phone.java) | 84 | [Minimum Path Sum](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/84-Minimum%20Path%20Sum.java) |
+| 29 | [Remove element](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/29-Remove%20element.java) | 85 | [Word Search](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/85-Word%20Search.java) |
+| 30 | [Complement of Base 10 Integer](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/30-Complement%20of%20Base%2010%20Integer.java) | 86 | [Restore IP Addresses](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/86-Restore%20IP%20Addresses.java) |
+| 31 | [Car Pooling](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/31-Car%20Pooling.java) | 87 | [Validate Binary Search Tree](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/87-Validate%20Binary%20Search%20Tree.java) |
+| 32 | [Search insert position](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/32-Search%20insert%20position.java) | 88 | [Same Tree](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/88-Same%20Tree.java) |
+| 33 | [Count and say](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/33-Count%20and%20say.java) | 89 | [Symmetric Tree](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/89-Symmetric%20Tree.java) |
+| 34 | [4Sum](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/34-4Sum.java) | 90 | [Binary Tree Level Order Traversal](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/90-Binary%20Tree%20Level%20Order%20Traversal.java) |
+| 35 | [Find First and Last Position of Element in Sorted Array](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/35-Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array.java) | 91 | [Convert Sorted List to Binary Search Tree](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/91-Convert%20Sorted%20List%20to%20Binary%20Search%20Tree.java) |
+| 36 | [Add Binary](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/36-Add%20Binary.java) | 92 | [Path Sum II](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/92-Path%20Sum%20II.java) |
+| 37 | [Sum of Root To Leaf Binary Numbers](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/37-Sum%20of%20Root%20To%20Leaf%20Binary%20Numbers.java) | 93 | [Populating Next Right Pointers in Each Node](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/93-Populating%20Next%20Right%20Pointers%20in%20Each%20Node.java) |
+| 38 | [Remove Nth Node From End of List](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/38-Remove%20Nth%20Node%20From%20End%20of%20List.java) | 94 | [Word Ladder](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/94-Word%20Ladder.java) |
+| 39 | [Reverse Nodes in k-Group](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/39-Reverse%20Nodes%20in%20k-Group.java) | 95 | [Divide Two Integers](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/95-Divide%20Two%20Integers.java) |
+| 40 | [Maximum Subarray](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/40-Maximum%20Subarray.java) | 96 | [Longest Substring Of All Vowels in Order](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/96-Longest%20Substring%20Of%20All%20Vowels%20in%20Order.java) |
+| 41 | [Insert into a Binary Search Tree](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/41-Insert%20into%20a%20Binary%20Search%20Tree.java) | 97 | [Candy](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/97-Candy.java) |
+| 42 | [Minimum Number of Arrows to Burst Balloons](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/42-Minimum%20Number%20of%20Arrows%20to%20Burst%20Balloons.java) | 98 | [LRU Cache](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/98-LRU%20Cache.java) |
+| 43 | [Generate Parentheses](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/43-Generate%20Parentheses.java) | 99 | [Min Stack](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/99-Min%20Stack.java) |
+| 44 | [Swap Nodes in Pairs](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/44-Swap%20Nodes%20in%20Pairs.java) | 100 | [Number of Islands](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/100-Number%20of%20Islands.java) |
+| 45 | [Merge Intervals](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/45-Merge%20Intervals.java) | 101 | [Course Schedule](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/101-Course%20Schedule.java) |
+| 46 | [Jump Game IV](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/46-Jump%20Game%20IV.java) | 102 | [Course Schedule II](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/102-Course%20Schedule%20II.java) |
+| 47 | [Length of Last Word](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/47-Length%20of%20Last%20Word.java) | 103 | [Design Add and Search Words Data Structure](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/103-Design%20Add%20and%20Search%20Words%20Data%20Structure.java) |
+| 48 | [Jump Game](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/48-Jump%20Game.java) | 104 | [Word Search II](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/104-Word%20Search%20II.java) |
+| 49 | [Jump Game II](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/49-Jump%20Game%20II.java) | 105 | [Sliding Window Maximum](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/105-Sliding%20Window%20Maximum.java) |
+| 50 | [Single Number](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/50-Single%20Number.java) | 106 | [Game of Life](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/106-Game%20of%20Life.java) |
+| 51 | [Valid Sudoku](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/51-Valid%20Sudoku.java) | 107 | [Find Median from Data Stream](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/107-Find%20Median%20from%20Data%20Stream.java) |
+| 52 | [Binary Tree Inorder Traversal](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/52-Binary%20Tree%20Inorder%20Traversal.java) | 108 | [Longest Common Subsequence](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/108-Longest%20Common%20Subsequence.java) |
+| 53 | [Word Pattern](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/53-Word%20Pattern.java) | 109 | [Delete Operation for Two Strings](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/109-Delete%20Operation%20for%20Two%20Strings.java) |
+| 54 | [Binary Tree Preorder Traversal](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/54-Binary%20Tree%20Preorder%20Traversal.java) | 110 | [Target Sum](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/110-Target%20Sum.java) |
+| 55 | [Evaluate Division](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/55-Evaluate%20Division.java) | 111 | [Design HashMap](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/111-Design%20HashMap.java) |
+| 56 | [Set Matrix Zeroes](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/56-Set%20Matrix%20Zeroes.java) | 112 | [Subarray Sum Equals K](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/112-Subarray%20Sum%20Equals%20K.java) |
