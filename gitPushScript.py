@@ -32,8 +32,9 @@ for i in range (r):
     link2 = ''
     index1 = line[i].split(' ', maxsplit=1)[0]
     name1 = line[i].split(' ', maxsplit=1)[1]
-    index2 = line[r+i].split(' ', maxsplit=1)[0]
-    name2 = line[r+i].split(' ', maxsplit=1)[1]
+    if r+i < len(line):
+        index2 = line[r+i].split(' ', maxsplit=1)[0]
+        name2 = line[r+i].split(' ', maxsplit=1)[1]
     for key,value in pathMap.items():
         if (i < key):
             link1 = "Leet-Code/"+ value+"/"+ index1+"-"+ name1.replace(' ', '%20') +".java"
