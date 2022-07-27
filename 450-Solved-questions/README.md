@@ -1,4 +1,6 @@
-450 Problems sheet by Love Babar DSA sheet| Sr. No | Name of the problem | Sr. No | Name of the problem |
+##450 Problems sheet by Love Babar DSA sheet
+
+| Sr. No | Name of the problem | Sr. No | Name of the problem |
 | ------ | ------------------- | ------ | ------------------- |
 | 1 | [Reverse the Array](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-Reverse the Array) | 2 | [Maximum and minimum of an array using minimum number of comparisons](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/2-Maximum and minimum of an array using minimum number of comparisons) |
 | 3 | [kth Smallest Integer](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/3-kth Smallest Integer) | 4 | [Sort an array of 0s, 1s and 2s](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/4-Sort an array of 0s, 1s and 2s) |
