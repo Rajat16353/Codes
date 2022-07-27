@@ -1,16 +1,10 @@
-import subprocess
+import os
 import re
-
-# This is our shell command, executed by Popen.
-p = subprocess.Popen("dir", stdout=subprocess.PIPE, shell=True, cwd='./450-Solved-questions')
-
-lines = p.communicate()[0].decode('UTF-8').split('\r\n')
 
 files = {}
 
-for line in lines[7:-4]:
-    line = re.sub(r"\s+", ' ',line)
-    index, name = line.split(' ', maxsplit=3)[3].split('-')
+for filename in os.listdir('./450-Solved-questions'):
+    index, name = filename.split('-')
     files[int(index)] = name
 
 print(len(files))
