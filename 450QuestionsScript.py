@@ -1,11 +1,12 @@
 import os
-import re
+import subprocess
 
 files = {}
 
 for filename in os.listdir('./450-Solved-questions'):
-    index, name = filename.split('-')
-    files[int(index)] = name
+    if (filename != 'README.md'):
+        index, name = filename.split('-')
+        files[int(index)] = name
 
 print(len(files))
 
@@ -30,3 +31,8 @@ for i in range(1, len(files)+1):
 with open(path_to_write_file, 'w') as f:
     f.write(data_to_write)
 f.close()
+
+p = subprocess.Popen("python gitScript.py", stdout=subprocess.PIPE, shell=True)
+
+status = p.communicate()
+print(status)
