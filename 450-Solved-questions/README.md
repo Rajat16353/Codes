@@ -32,3 +32,4 @@
 32. Three way partitioning
 33. Reverse String
 34. The Celebrity Problem
+35. Minimum swaps and K together
