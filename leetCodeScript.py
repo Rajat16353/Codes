@@ -9,7 +9,7 @@ for folder in os.listdir(directory):
     subfolder = directory + '/'+ folder
     if os.path.isdir(subfolder):
         for filename in os.listdir(subfolder):
-            print(filename)
+            # print(filename)
             index, name = filename.split('-', maxsplit=1)
             name, file_extension = name.split('.')
             link = subfolder[2:]+'/'+filename.replace(' ', '%20')
