@@ -63,4 +63,5 @@
 | 113 | [Largest Rectangle in Histogram](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/113-Largest%20Rectangle%20in%20Histogram.java) | 114 | [Linked List Cycle](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/114-Linked%20List%20Cycle.java) |
 | 115 | [Longest Increasing Subsequence](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/115-Longest%20Increasing%20Subsequence.java) | 116 | [Climbing Stairs](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/116-Climbing%20Stairs.java) |
 | 117 | [Search a 2D Matrix](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/117-Search%20a%202D%20Matrix.java) | 118 | [Search a 2D Matrix II](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/118-Search%20a%202D%20Matrix%20II.java) |
-| 119 | [Spiral Matrix](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/119-Spiral%20Matrix.java) 
+| 119 | [Spiral Matrix](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/119-Spiral%20Matrix.java) | 120 | [Shuffle String](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/120-Shuffle%20String.java) |
+| 121 | [Maximal Rectangle](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/121-Maximal%20Rectangle.java) 
