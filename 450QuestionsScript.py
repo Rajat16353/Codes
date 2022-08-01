@@ -2,11 +2,20 @@ import os
 import subprocess
 
 files = {}
+directory = './450-Solved-questions'
 
-for filename in os.listdir('./450-Solved-questions'):
-    if (filename != 'README.md'):
-        index, name = filename.split('-')
-        files[int(index)] = name
+for folder in os.listdir(directory):
+    subfolder = directory + '/'+ folder
+    if os.path.isdir(subfolder):
+        for filename in os.listdir(subfolder):
+            # print(filename)
+            index, name = filename.split('-', maxsplit=1)
+            name, file_extension = name.split('.')
+            link = subfolder[2:]+'/'+filename.replace(' ', '%20')
+            files[int(index)] = {'filename': name, 'extension': file_extension, 'link': link}
+
+        
+    
 
 print(len(files))
 
@@ -19,14 +28,14 @@ data_to_write = data_to_write + "| ------ | ------------------- | ------ | -----
 
 
 for i in range(1, len(files)+1):
-    name = files[i].split('.')[0]
-    link = '450-Solved-questions/'+str(i)+'-'+files[i].replace(' ', '%20')
+    name = files[i]['filename']
+    link = files[i]['link']
     if i % 2 == 1:
         data_to_write = data_to_write + '| '+str(i)+' | ['+name+'](https://github.com/Rajat16353/Codes/blob/master/' + link + ') '
     else:
         data_to_write = data_to_write + '| '+str(i)+' | ['+name+'](https://github.com/Rajat16353/Codes/blob/master/' + link + ') |\n'
 
-# print(data_to_write)
+print(data_to_write)
 
 with open(path_to_write_file, 'w') as f:
     f.write(data_to_write)
