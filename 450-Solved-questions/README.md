@@ -1,4 +1,4 @@
-# 450 Problems sheet by Love Babar DSA sheet
+# 450 Problems from Love Babar DSA sheet
 
 | Sr. No | Name of the problem | Sr. No | Name of the problem |
 | ------ | ------------------- | ------ | ------------------- |
@@ -26,4 +26,6 @@
 | 43 | [Spirally traversing a matrix](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/43-Spirally%20traversing%20a%20matrix.java) | 44 | [Row with max 1s](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/44-Row%20with%20max%201s.java) |
 | 45 | [Sorted matrix](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/45-Sorted%20matrix.java) | 46 | [Max rectangle](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/46-Max%20rectangle.java) |
 | 47 | [Common elements in all rows of a given matrix](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/47-Common%20elements%20in%20all%20rows%20of%20a%20given%20matrix.java) | 48 | [Kth element in Matrix](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/48-Kth%20element%20in%20Matrix.java) |
-| 49 | [First and last occurrences of x](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/49-First%20and%20last%20occurrences%20of%20x.java) 
+| 49 | [First and last occurrences of x](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/49-First%20and%20last%20occurrences%20of%20x.java) | 50 | [Number of 1 Bits](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/50-Number%20of%201%20Bits.java) |
+| 51 | [Bit Difference](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/51-100/51-Bit%20Difference.java) | 52 | [Non Repeating Numbers](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/51-100/52-Non%20Repeating%20Numbers.java) |
+| 53 | [Count total set bits](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/51-100/53-Count%20total%20set%20bits.java) 
