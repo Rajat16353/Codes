@@ -22,7 +22,7 @@ print(len(files))
 path_to_write_file = "450-Solved-questions/README.md"
 
 
-data_to_write = "# 450 Problems sheet by Love Babar DSA sheet"+"\n"+"\n"
+data_to_write = "# 450 Problems from Love Babar DSA sheet"+"\n"+"\n"
 data_to_write = data_to_write + "| Sr. No | Name of the problem | Sr. No | Name of the problem |\n"
 data_to_write = data_to_write + "| ------ | ------------------- | ------ | ------------------- |\n"
 
