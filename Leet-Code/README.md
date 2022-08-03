@@ -66,4 +66,5 @@
 | 119 | [Spiral Matrix](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/119-Spiral%20Matrix.java) | 120 | [Shuffle String](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/120-Shuffle%20String.java) |
 | 121 | [Maximal Rectangle](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/121-Maximal%20Rectangle.java) | 122 | [Kth Smallest Element in a Sorted Matrix](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/122-Kth%20Smallest%20Element%20in%20a%20Sorted%20Matrix.java) |
 | 123 | [Number of 1 Bits](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/123-Number%20of%201%20Bits.java) | 124 | [Counting Bits](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/124-Counting%20Bits.java) |
-| 125 | [Hamming Distance](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/125-Hamming%20Distance.java) 
+| 125 | [Hamming Distance](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/125-Hamming%20Distance.java) | 126 | [Power of Two](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/126-Power%20of%20Two.java) |
+| 127 | [Binary Number with Alternating Bits](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/101-150/127-Binary%20Number%20with%20Alternating%20Bits.java) 
