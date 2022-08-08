@@ -29,7 +29,7 @@ for i in range(1, len(files)+1):
         data_to_write = data_to_write + '| '+str(i)+' | ['+name+'](https://github.com/Rajat16353/Codes/blob/master/' + link + ') |\n'
 
 # print(data_to_write)
-print(len(files))
+# print(len(files))
 
 with open(path_to_write_file, 'w') as f:
     f.write(data_to_write)
