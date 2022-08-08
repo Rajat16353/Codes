@@ -17,7 +17,7 @@ for folder in os.listdir(directory):
         
     
 
-print(len(files))
+# print(len(files))
 
 path_to_write_file = "450-Solved-questions/README.md"
 
