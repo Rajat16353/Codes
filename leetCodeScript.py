@@ -35,7 +35,7 @@ with open(path_to_write_file, 'w') as f:
     f.write(data_to_write)
 f.close()
 
-# p = subprocess.Popen("python gitScript.py", stdout=subprocess.PIPE, shell=True)
+p = subprocess.Popen("python gitScript.py", stdout=subprocess.PIPE, shell=True)
 
-# status = p.communicate()
-# print(status)
+status = p.communicate()
+print(status)
