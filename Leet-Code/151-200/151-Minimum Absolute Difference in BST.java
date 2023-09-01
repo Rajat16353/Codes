@@ -38,25 +38,26 @@
  * }
  */
 class Solution {
+    private int minDiff = Integer.MAX_VALUE;
+    private TreeNode prev = null;
+    
     public int getMinimumDifference(TreeNode root) {
-        return inorderTraversal(root, null, Integer.MAX_VALUE);
+        inorderTraversal(root);
+        return minDiff;
     }
     
-    private int inorderTraversal(TreeNode node, TreeNode prev, int minDifference) {
+    private void inorderTraversal(TreeNode node) {
         if (node == null) {
-            return minDifference;
+            return;
         }
         
-        minDifference = inorderTraversal(node.left, prev, minDifference);
+        inorderTraversal(node.left);
         
         if (prev != null) {
-            minDifference = Math.min(minDifference, node.val - prev.val);
-            System.out.println(node.val + " " + prev.val);
+            minDiff = Math.min(minDiff, node.val - prev.val);
         }
         prev = node;
         
-        minDifference = inorderTraversal(node.right, prev, minDifference);
-
-        return minDifference;
+        inorderTraversal(node.right);
     }
 }
