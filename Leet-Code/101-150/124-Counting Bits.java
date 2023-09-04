@@ -47,3 +47,19 @@ class Solution {
         return res;
     }
 }
+
+// DP solution
+class Solution {
+    public int[] countBits(int n) {
+        int[] bitCount = new int[n + 1];
+        bitCount[0] = 0;
+        for (int i = 1; i < n + 1; i++) {
+            if (i % 2 == 0) {
+                bitCount[i] = bitCount[i/2];
+            } else {
+                bitCount[i] = bitCount[i/2] + 1;
+            }
+        }
+        return bitCount;
+    }
+}
