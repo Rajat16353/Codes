@@ -84,3 +84,4 @@
 | 155 | [Path Sum](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/155-Path%20Sum.java) | 156 | [Sum Root to Leaf Numbers](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/156-Sum%20Root%20to%20Leaf%20Numbers.java) |
 | 157 | [Binary Tree Right Side View](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/157-Binary%20Tree%20Right%20Side%20View.java) | 158 | [Rotate Image](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/158-Rotate%20Image.java) |
 | 159 | [Unique Paths](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/159-Unique%20Paths.java) | 160 | [Sqrt(x)](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/160-Sqrt(x).java) |
+| 161 | [Remove Duplicates from Sorted List](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/161-Remove%20Duplicates%20from%20Sorted%20List.java) 
