@@ -96,3 +96,4 @@
 | 179 | [Find the Difference](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/179-Find%20the%20Difference.java) | 180 | [Remove Duplicate Letters](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/180-Remove%20Duplicate%20Letters.java) |
 | 181 | [Smallest Subsequence of Distinct Characters](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/181-Smallest%20Subsequence%20of%20Distinct%20Characters.java) | 182 | [Decoded String at Index](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/182-Decoded%20String%20at%20Index.java) |
 | 183 | [Sort Array By Parity](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/183-Sort%20Array%20By%20Parity.java) | 184 | [Monotonic Array](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/184-Monotonic%20Array.java) |
+| 185 | [132 Pattern](https://github.com/Rajat16353/Codes/blob/master/Leet-Code/151-200/185-132%20Pattern.java) 
