@@ -1,7 +1,7 @@
 # 450 Problems from Love Babar DSA sheet
 
-| Sr. No | Name of the problem | Sr. No | Name of the problem |
-| ------ | ------------------- | ------ | ------------------- |
+| Sr. No | Name of the problem | Sr. No | Name of the problem | Sr. No | Name of the problem |
+| ------ | ------------------- | ------ | ------------------- | ------ | ------------------- |
 | 1 | [ReverseArray](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/1-ReverseArray.py) | 2 | [MinimumAndMaximumOfArray](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/2-MinimumAndMaximumOfArray.java) | 3 | [kth smallest Integer](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/3-kth%20smallest%20Integer.java) |
 | 4 | [Sort an array of 0s, 1s and 2s](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/4-Sort%20an%20array%20of%200s,%201s%20and%202s.java) | 5 | [Move all negative to left and positive to right](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/5-Move%20all%20negative%20to%20left%20and%20positive%20to%20right.java) | 6 | [Union of two arrays](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/6-Union%20of%20two%20arrays.java) |
 | 7 | [Cyclically rotate an array by one](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/7-Cyclically%20rotate%20an%20array%20by%20one.java) | 8 | [Minimum number of jumps](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/8-Minimum%20number%20of%20jumps.java) | 9 | [Find duplicate in an array of N+1 Integers](https://github.com/Rajat16353/Codes/blob/master/450-Solved-questions/1-50/9-Find%20duplicate%20in%20an%20array%20of%20N+1%20Integers.java) |
