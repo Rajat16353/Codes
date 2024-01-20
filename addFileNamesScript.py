@@ -30,7 +30,7 @@ data_to_write = data_to_write + "| ------ | ------------------- | ------ | -----
 for i in range(1, len(files)+1):
     name = files[i]['filename']
     link = files[i]['link']
-    if i % 2 == 1:
+    if i % 3 != 0:
         data_to_write = data_to_write + '| '+str(i)+' | ['+name+'](https://github.com/Rajat16353/Codes/blob/master/' + link + ') '
     else:
         data_to_write = data_to_write + '| '+str(i)+' | ['+name+'](https://github.com/Rajat16353/Codes/blob/master/' + link + ') |\n'
