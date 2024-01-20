@@ -23,14 +23,14 @@ path_to_write_file = "450-Solved-questions/README.md"
 
 
 data_to_write = "# 450 Problems from Love Babar DSA sheet"+"\n"+"\n"
-data_to_write = data_to_write + "| Sr. No | Name of the problem | Sr. No | Name of the problem | Sr. No | Name of the problem |\n"
-data_to_write = data_to_write + "| ------ | ------------------- | ------ | ------------------- | ------ | ------------------- |\n"
+data_to_write = data_to_write + "| Sr. No | Name of the problem | Sr. No | Name of the problem | Sr. No | Name of the problem | Sr. No | Name of the problem |\n"
+data_to_write = data_to_write + "| ------ | ------------------- | ------ | ------------------- | ------ | ------------------- | ------ | ------------------- |\n"
 
 
 for i in range(1, len(files)+1):
     name = files[i]['filename']
     link = files[i]['link']
-    if i % 3 != 0:
+    if i % 4 != 0:
         data_to_write = data_to_write + '| '+str(i)+' | ['+name+'](https://github.com/Rajat16353/Codes/blob/master/' + link + ') '
     else:
         data_to_write = data_to_write + '| '+str(i)+' | ['+name+'](https://github.com/Rajat16353/Codes/blob/master/' + link + ') |\n'
