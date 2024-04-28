@@ -42,6 +42,8 @@
  *     }
  * }
  */
+
+// Time complexity O(n)
 class Solution {
     public int countNodes(TreeNode root) {
         if (root == null) {
@@ -64,5 +66,55 @@ class Solution {
             }
         }
         return noOfNodes;
+    }
+}
+
+// Time complexity O(log(n)^2)
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    private int calculateLeftHeight(TreeNode root) {
+        int height = 0;
+        while(root.left != null) {
+            height += 1;
+            root = root.left;
+        }
+        return height;
+    }
+
+    private int calculateRightHeight(TreeNode root) {
+        int height = 0;
+        while(root.right != null) {
+            height += 1;
+            root = root.right;
+        }
+        return height;
+    }
+
+    public int countNodes(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int left = calculateLeftHeight(root);
+        int right = calculateRightHeight(root);
+
+        if (left == right) {
+            return ((2<<(left)) -1);
+        } else {
+            return countNodes(root.left) + countNodes(root.right) + 1;
+        }
     }
 }
