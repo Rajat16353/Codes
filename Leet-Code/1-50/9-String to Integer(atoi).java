@@ -81,7 +81,7 @@ class Solution {
             res += s.charAt(i);
             i += 1;
         }
-        return (int)Math.max(Math.pow(-2,31), Math.min(sign*Double.parseDouble(res.length() != 0 ? res: "0"), Math.pow(2, 31)-1));
+        return (int)Math.max(Integer.MIN_VALUE, Math.min(sign*Double.parseDouble(res.length() != 0 ? res: "0"), Integer.MAX_VALUE));
     }
 }
 
@@ -107,6 +107,6 @@ class Solution {
             res = res * 10 + s.charAt(i)-'0';
             i += 1;
         }
-        return (int)Math.max(Math.pow(-2,31), Math.min(sign*res, Math.pow(2, 31)-1));
+        return (int)Math.max(Integer.MIN_VALUE, Math.min(sign*res, Integer.MAX_VALUE));
     }
 }
