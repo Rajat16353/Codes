@@ -26,8 +26,34 @@
 
 // 1 <= n <= 1000
 
+// Mathematical Solution
 class Solution {
     public boolean divisorGame(int n) {
         return n % 2 == 0;
+    }
+}
+
+// Using Memoization and Recursion
+class Solution {
+    private boolean divisorGame(int n, Map<Integer, Boolean> memo) {
+        if (n == 1) {
+            memo.put(n, false);
+            return false;
+        }
+        if (n == 2) {
+            memo.put(n, true);
+            return true;
+        }
+        for(int i = 1; i * i <= n; i++) {
+            if (n % i == 0) {
+                memo.put(n, !divisorGame(n - i, memo));
+                return memo.get(n);
+            }
+        }
+        return false;
+    }
+
+    public boolean divisorGame(int n) {
+        return divisorGame(n, new HashMap<>());
     }
 }
