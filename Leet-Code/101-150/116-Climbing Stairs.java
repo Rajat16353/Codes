@@ -25,17 +25,30 @@
 
 // 1 <= n <= 45
 
-class Solution {    
+// Recursive
+class Solution {
     public int climbStairs(int n) {
-        int n1 = 1;
-        int n2 = 0;
-        int i = 0, climb = 0;
-        while(i < n) {
-            climb = n1 + n2;
-            n2 = n1;
-            n1 = climb;
-            i++;
+        if (n == 0 || n == 1) {
+            return 1;
         }
-        return climb;
+        return climbStairs(n-1) + climbStairs(n-2);
+    }
+}
+
+// Recursive with Memoization
+class Solution {
+    public int climbStairs(int n) {
+        return climbStairs(n, new HashMap<>());
+    }
+
+    private int climbStairs(int n, Map<Integer, Integer> memo) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+
+        if (!memo.containsKey(n)) {
+            memo.put(n, climbStairs(n - 1, memo) + climbStairs(n - 2, memo));
+        }
+        return memo.get(n);
     }
 }
