@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/450-Solved-questions/450-Solved-questions.iml" filepath="$PROJECT_DIR$/450-Solved-questions/450-Solved-questions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Codes.iml" filepath="$PROJECT_DIR$/.idea/Codes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Leet-Code/Leet-Code.iml" filepath="$PROJECT_DIR$/Leet-Code/Leet-Code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Searching Algorithms/Searching Algorithms.iml" filepath="$PROJECT_DIR$/Searching Algorithms/Searching Algorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sorting Algorithms/Sorting Algorithms.iml" filepath="$PROJECT_DIR$/Sorting Algorithms/Sorting Algorithms.iml" />
+    </modules>
+  </component>
+</project>
