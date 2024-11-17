@@ -44,3 +44,85 @@ class Solution {
         return maxProfit;
     }
 }
+
+// Using recursion and memoisation
+class Solution {
+    Map<Pair<Integer, Boolean>, Integer> dp;
+    private int maxProfit(int[] prices, int index, Boolean canBuy) {
+        if (index == prices.length) {
+            return 0;
+        }
+        Pair key = new Pair(index, canBuy);
+        if (dp.containsKey(key)) return dp.get(key);
+        int profit = 0;
+
+        if (canBuy) {
+            profit = Math.max(maxProfit(prices, index + 1, false) - prices[index], maxProfit(prices, index + 1, true) + 0);
+        } else {
+            profit = Math.max(maxProfit(prices, index + 1, true) + prices[index], maxProfit(prices, index + 1, false) + 0);
+        }
+        dp.put(key, profit);
+        return profit;
+    }
+
+    public int maxProfit(int[] prices) {
+        dp = new HashMap<>();
+        return maxProfit(prices, 0, true);
+    }
+}
+
+// Dynamic Programming
+class Solution {
+    Map<Pair<Integer, Boolean>, Integer> dp;
+    private void maxProfit(int[] prices, int index, Boolean canBuy) {
+        Pair key = new Pair(index, canBuy);
+        int profit = 0;
+        if (canBuy) {
+            profit = Math.max(dp.get(new Pair(index + 1, false)) - prices[index], dp.get(new Pair(index + 1, true)) + 0);
+        } else {
+            profit = Math.max(dp.get(new Pair(index + 1, true)) + prices[index], dp.get(new Pair(index + 1, false)) + 0);
+        }
+        dp.put(key, profit);
+    }
+
+    public int maxProfit(int[] prices) {
+        dp = new HashMap<>();
+        dp.put(new Pair(prices.length, false), 0);
+        dp.put(new Pair(prices.length, true), 0);
+
+        for (int index = prices.length - 1; index > -1; index--) {
+            maxProfit(prices, index, true);
+            maxProfit(prices, index, false);
+        }
+        return dp.get(new Pair(0, true));
+    }
+}
+
+// Dynamic Programming with optimised memory
+class Solution {
+    int[] ahead;
+    int[] cur;
+    private void maxProfit(int[] prices, int index, int canBuy) {
+        int profit = 0;
+        if (canBuy != 0) {
+            profit = Math.max(ahead[0] - prices[index], ahead[1] + 0);
+        } else {
+            profit = Math.max(ahead[1] + prices[index], ahead[0] + 0);
+        }
+        cur[canBuy] = profit;
+    }
+
+    public int maxProfit(int[] prices) {
+        ahead = new int[2];
+        cur = new int[2];
+        ahead[0] = 0;
+        ahead[1] = 0;
+
+        for (int index = prices.length - 1; index > -1; index--) {
+            maxProfit(prices, index, 1);
+            maxProfit(prices, index, 0);
+            ahead = cur;
+        }
+        return ahead[1];
+    }
+}
