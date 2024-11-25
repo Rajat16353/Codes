@@ -81,3 +81,51 @@ class Solution {
         return maxArea;
     }
 }
+
+
+//Optimised approach with clean code
+class Solution {
+    public int largestRectangleArea(int[] heights) {
+        Stack<Integer> index = new Stack<>();
+        Stack<Integer> value = new Stack<>();
+        
+        int maxArea = Integer.MIN_VALUE;
+
+        for(int i = 0; i < heights.length; i++) {
+            int area = 0;
+            if (index.isEmpty() || (!value.isEmpty() && value.peek() <= heights[i])) {
+                
+            } else {
+                while (!value.isEmpty() && heights[i] < value.peek()) {
+                    index.pop();
+                    int lse = index.isEmpty() ? -1: index.peek();
+                    maxArea = Math.max(maxArea, value.pop() * (i - lse - 1));
+                }
+                value.push(heights[i]);
+                index.push(i);
+            }
+            index.push(i);
+            value.push(heights[i]);
+        }
+
+        while(!index.isEmpty()) {
+            index.pop();
+            int lse = index.isEmpty() ? -1: index.peek();
+            maxArea = Math.max(maxArea, value.pop() * (heights.length - lse - 1));
+        }
+
+        return maxArea;
+    }
+
+    public int maximalRectangle(char[][] matrix) {
+        int maxArea = Integer.MIN_VALUE;
+        int[] heights = new int[matrix[0].length];
+        for(int i = 0; i < matrix.length; i++) {
+            for(int j = 0; j < matrix[0].length; j++) {
+                heights[j] = matrix[i][j] == '0' ? 0: heights[j] + matrix[i][j] - '0';
+            }
+            maxArea = Math.max(maxArea, largestRectangleArea(heights));
+        }
+        return maxArea;
+    }
+}
