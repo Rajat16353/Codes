@@ -35,18 +35,14 @@
  * }
  */
 class Solution {
-    private Boolean preOrder(TreeNode p, TreeNode q) {
-        if (p == null && q == null)
+    private Boolean preOrder(TreeNode leftTree, TreeNode rightTree) {
+        if (leftTree == null && rightTree == null)
             return true;
         
-        if (p == null || q == null)
+        if (leftTree == null || rightTree == null || leftTree.val != rightTree.val)
             return false;
         
-        if(p.val != q.val)
-            return false;
-        
-        return preOrder(p.left, q.right) && preOrder(p.right, q.left);
-        
+        return preOrder(leftTree.left, rightTree.right) && preOrder(leftTree.right, rightTree.left);
     }
     
     public boolean isSymmetric(TreeNode root) {
