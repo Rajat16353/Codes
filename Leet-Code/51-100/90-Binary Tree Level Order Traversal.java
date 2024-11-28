@@ -38,40 +38,25 @@
  * }
  */
 class Solution {
-    private void bfs(Queue<TreeNode> q, int level, List<List<Integer>> result) {
-        if (q.isEmpty())
-            return;
-        List<Integer> lev = new ArrayList<>();
-        
-        q.add(null);
-        while(q.peek() != null) {
-            TreeNode node = q.poll();
-            if (node.left != null) {
-                q.add(node.left);
-                lev.add(node.left.val);
-            }
-            if (node.right != null) {
-                q.add(node.right);
-                lev.add(node.right.val);
-            }
-        }
-        q.remove();
-        if (!lev.isEmpty()) result.add(lev);
-        
-        bfs(q, level+1, result);
-    }
-    
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
-        if (root == null)
+        Queue<TreeNode> queue = new LinkedList<>();
+        if (root == null) {
             return result;
-        
-        Queue<TreeNode> q = new LinkedList<>();
-        
-        q.add(root);
-        
-        result.add(Arrays.asList(root.val));
-        bfs(q, 0, result);
-            return result;
+        }
+        queue.offer(root);
+        while(!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> row = new ArrayList<>();
+            while(size > 0) {
+                TreeNode node = queue.poll();
+                row.add(node.val);
+                if (node.left != null) queue.offer(node.left);
+                if (node.right != null) queue.offer(node.right);
+                size--;
+            }
+            result.add(row);
+        }
+        return result;
     }
 }
