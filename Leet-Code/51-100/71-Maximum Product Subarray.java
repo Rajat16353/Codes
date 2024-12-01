@@ -26,17 +26,17 @@
 
 class Solution {
     public int maxProduct(int[] nums) {
-        int maxP = nums[0];
-        int minP = nums[0];
-        int ans = nums[0];
-        int choice1, choice2;
-        for(int i = 1; i < nums.length; i++) {
-            choice1 = nums[i] * maxP;
-            choice2 = nums[i] * minP;
-            maxP = Math.max(nums[i], Math.max(choice1, choice2));
-            minP = Math.min(nums[i], Math.min(choice1, choice2));
-            ans = Math.max(ans, maxP);
+        int max = Integer.MIN_VALUE;
+        int prefix = 1, suffix = 1;
+        for (int i = 0; i < nums.length; i++) {
+            if (prefix == 0) prefix = 1;
+            if (suffix == 0) suffix = 1;
+
+            prefix *= nums[i];
+            suffix *= nums[nums.length - i - 1];
+
+            max = Math.max(max, Math.max(prefix, suffix));
         }
-        return ans;
+        return max;
     }
 }
