@@ -24,23 +24,21 @@
 
 class Solution {
     
-    private void backtrack(int n, int k, int curr, List<Integer> combination, List<List<Integer>> result) {
-        if (curr > n) {
-            return;
-        }
+    private void backtrack(int start, int n, int k, List<Integer> combination, List<List<Integer>> result) {
         if (combination.size() == k) {
             result.add(new ArrayList<>(combination));
             return;
         }
-        combination.add(curr + 1);
-        backtrack(n, k, curr + 1, combination, result);
-        combination.remove(combination.size() - 1);
-        backtrack(n, k, curr + 1, combination, result);
+        for (int i = start; i < n + 1; i++) {
+            combination.add(i);
+            backtrack(i + 1, n, k, combination, result);
+            combination.remove(combination.size() - 1);
+        }
     }
 
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
-        backtrack(n, k, 0, new ArrayList<>(), result);
+        backtrack(1, n, k, new ArrayList<>(), result);
         return result;
     }
 }
