@@ -27,22 +27,19 @@
 
 class Solution {
     public int[] productExceptSelf(int[] nums) {
-        int[] answer = new int[nums.length];
-        answer[0] = 1;
-        int prefix = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            answer[i] = prefix;
-            prefix *= nums[i];
+        int prefix = 1;
+        int suffix = 1;
+        int[] ans = new int[nums.length];
+        
+        ans[nums.length - 1] = 1;
+        for(int i = nums.length - 2; i >= 0; i--) {
+            ans[i] = ans[i + 1] * nums[i + 1];
         }
 
-        System.out.println(Arrays.toString(answer));
-
-        int postfix = 1;
-        for (int i = nums.length - 1; i > -1; i--) {
-            answer[i] = postfix * answer[i];
-            postfix *= nums[i];
+        for(int i = 0; i < nums.length; i++) {
+            ans[i] = prefix * ans[i];
+            prefix = prefix * nums[i];
         }
-
-        return answer;
+        return ans;
     }
 }
