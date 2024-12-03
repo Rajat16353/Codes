@@ -32,26 +32,26 @@ n == height.length
 
 class Solution {
     public int maxArea(int[] height) {
-        int l = 0, r = height.length-1, max = -1;
+        int maxWater = Integer.MIN_VALUE;
+        
         if (height.length == 0) {
             return 0;
         }
         if (height.length == 1) {
             return height[0]*height[0];
         }
-        while(l<r) {
-            if (height[l] > height[r]) {
-                if (height[r]*(r-l) > max) {
-                max = height[r]*(r-l);
-                }
-                r--;
+
+        int left = 0;
+        int right = height.length - 1;
+        while (left < right) {
+            if (height[left] > height[right]) {
+                maxWater = Math.max(height[right] * (right - left), maxWater);
+                right--;
             } else {
-                if (height[l]*(r-l) > max) {
-                max = height[l]*(r-l);
-                }
-                l++;
+                maxWater = Math.max(height[left] * (right - left), maxWater);
+                left++;
             }
         }
-        return max;
+        return maxWater;
     }
 }
