@@ -26,26 +26,20 @@
 
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-        List<List<String>> groupLists = new ArrayList<List<String>>();
+        List<List<String>> groupLists = new ArrayList<>();
         Map<String, List<String>> anagram = new HashMap<>();
 
         for (String word: strs) {
             char[] charArray = word.toCharArray();
             Arrays.sort(charArray);
-            String sortedWord = new String(charArray);
-            if (anagram.containsKey(sortedWord)) {
-                anagram.get(sortedWord).add(word);
-            } else {
-                List<String> groupList = new ArrayList<>();
-                groupList.add(word);
-                anagram.put(sortedWord, groupList);
-            }
+            String key = new String(charArray);
+            anagram.computeIfAbsent(key, k -> new ArrayList<>()).add(word);
         }
 
-        for (List<String> groupList: anagram.values()) {
-            groupLists.add(groupList);
+        for (Map.Entry<String, List<String>> entry: anagram.entrySet()) {
+            groupLists.add(entry.getValue());
         }
-
+        
         return groupLists;
     }
 }
