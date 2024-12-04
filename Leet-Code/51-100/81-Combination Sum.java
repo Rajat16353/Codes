@@ -32,26 +32,24 @@
 // 1 <= target <= 500
 
 class Solution {
-    private void dfs(int[] candidates, int target, int i, List<Integer> curr, int total, List<List<Integer>> res) {
-        if (total == target) {
-            List<Integer> copy = new ArrayList<>(curr);
-            res.add(copy);
+    private void combinationSum(int[] candidates, int target, int index, List<Integer> combination, List<List<Integer>> result) {
+        if (target < 0 || index > candidates.length - 1) {
+            return;
+        }
+        if (target == 0) {
+            result.add(new ArrayList<>(combination));
             return;
         }
 
-        if (i >= candidates.length || total > target)
-            return;
-        curr.add(candidates[i]);
-        dfs(candidates, target, i, curr, total + candidates[i], res);
-        curr.remove(curr.size()-1);
-
-        dfs(candidates, target,i+1, curr, total, res);
+        combination.add(candidates[index]);
+        combinationSum(candidates, target - candidates[index], index, combination, result);
+        combination.remove(combination.size() - 1);
+        combinationSum(candidates, target, index + 1, combination, result);
     }
-    
+
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> res = new ArrayList<>();
- 
-        dfs(candidates, target, 0, new ArrayList<>(), 0, res);
-        return res;
+        List<List<Integer>> result = new ArrayList<>();
+        combinationSum(candidates, target, 0, new ArrayList<>(), result);
+        return result;
     }
 }
