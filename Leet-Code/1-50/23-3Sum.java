@@ -66,8 +66,8 @@ class Solution {
                     result.add(Arrays.asList(new int[]{nums[k], nums[i], nums[j]}));
                     i++;
                     j--;
-                    while(i < j && nums[i] == nums[i - 1] && i < j) i++;
-                    while(i < j && nums[j] == nums[j + 1] && i < j) j--;
+                    while(i < j && nums[i] == nums[i - 1]) i++;
+                    while(i < j && nums[j] == nums[j + 1]) j--;
                 }
             }
         }
