@@ -41,25 +41,74 @@ class Solution {
     }
 }
 
-// Dynamic Programming
+// Dynamic Programming Top down approach
+class Solution {
+    private int topDown(int r, int c, int[][] dp) {
+        if (r == 0 && c == 0) {
+            return 1;
+        }
+        if (dp[r][c] != -1) return dp[r][c];
+
+        int up = 0;
+        int left = 0;
+        if (r - 1 > -1) up = topDown(r - 1, c, dp);
+        if (c - 1 > -1) left = topDown(r, c - 1, dp);
+
+        return dp[r][c] = up + left;
+    }
+
+    public int uniquePaths(int m, int n) {
+        int[][] dp = new int[m][n];
+        Arrays.stream(dp).forEach((row) -> Arrays.fill(row, -1));
+
+        return topDown(m - 1, n - 1, dp);
+    }
+}
+
+// Bottom up approach
 class Solution {
     public int uniquePaths(int m, int n) {
-        int[] prev_row = new int[n];
-        for (int i = 0; i < n; i++) {
-            prev_row[i] = 1;
+        int[][] dp = new int[m][n];
+
+        for (int r = 0; r < m; r++) {
+            for (int c = 0; c < n; c++) {
+                if (r == 0 && c == 0) {
+                    dp[r][c] = 1;
+                    continue;
+                }
+                int up = 0;
+                int left = 0;
+                if (r - 1 > -1) up = dp[r - 1][c];
+                if (c - 1 > -1) left = dp[r][c - 1];
+                dp[r][c] = up + left;
+            }
         }
 
-        for (int i = 1; i < m; i++) {
-            int[] curr_row = new int[n];
-            for (int j = 0; j < n; j++) {
-                if (j > 0) {
-                    curr_row[j] = prev_row[j] + curr_row[j - 1];
-                } else {
-                    curr_row[j] = prev_row[j];
+        return dp[m - 1][n - 1];
+    }
+}
+
+// Space optimised bottom up approach
+class Solution {
+    public int uniquePaths(int m, int n) {
+        int[] dp = new int[n];
+
+        for (int r = 0; r < m; r++) {
+            int[] cur = new int[n];
+            for (int c = 0; c < n; c++) {
+                if (r == 0 && c == 0) {
+                    cur[c] = 1;
+                    continue;
                 }
+                int up = 0;
+                int left = 0;
+                if (r - 1 > -1) up = dp[c];
+                if (c - 1 > -1) left = cur[c - 1];
+                cur[c] = up + left;
             }
-            prev_row = curr_row;
+            dp = cur;
         }
-        return prev_row[n-1];
+
+        return dp[n - 1];
     }
 }
