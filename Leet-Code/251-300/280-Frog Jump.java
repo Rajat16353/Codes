@@ -25,6 +25,7 @@
 // stones[0] == 0
 // stones is sorted in a strictly increasing order.
 
+// Top down approach
 class Solution {
     private boolean canCross(int[] stones, int index, int k, Map<Pair<Integer, Integer>, Boolean> dp) {
         if (k == 0) {
@@ -60,5 +61,37 @@ class Solution {
         Map<Pair<Integer, Integer>, Boolean> dp = new HashMap<>();
 
         return canCross(stones, 1, 1, dp);
+    }
+}
+
+// Bottom Up approach
+class Solution {
+    public boolean canCross(int[] stones) {
+        if (stones[1] - stones[0] > 1) {
+            return false;
+        }
+        
+        Map<Integer, Set<Integer>> dp = new HashMap<>();
+        for(int pos: stones) {
+            dp.put(pos, new HashSet<>());
+        }
+
+        dp.get(stones[0]).add(1);
+
+        for (int i = 0; i < stones.length; i++) {
+            Set<Integer> jumps = dp.get(stones[i]);
+            for(int jump: jumps) {
+                int pos = jump + stones[i];
+                if (pos == stones[stones.length - 1]) return true;
+
+                if (dp.containsKey(pos)) {
+                    dp.get(pos).add(jump);
+                    dp.get(pos).add(jump + 1);
+                    if (jump - 1 > 0) dp.get(pos).add(jump - 1);
+                }
+            }
+        }
+
+        return false;
     }
 }
