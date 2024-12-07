@@ -59,3 +59,27 @@ class Solution {
         return dfs(s);
     }
 }
+
+//Bottom Up approach
+class Solution {
+    public boolean wordBreak(String s, List<String> wordDict) {
+        Set<String> dict = new HashSet<>(wordDict);
+        boolean[] dp = new boolean[s.length() + 1];
+        
+        dp[s.length()] = true;
+
+        for(int i = s.length() - 1; i >= 0; i--) {
+            int j = i;
+            while(j < s.length()) {
+                String subString = s.substring(i, j + 1);
+                if (dict.contains(subString) && dp[j + 1]) {
+                    dp[i] = true;
+                    break;
+                }
+                j++;
+            }
+        }
+
+        return dp[0];
+    }
+}
