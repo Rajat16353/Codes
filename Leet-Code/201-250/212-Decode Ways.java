@@ -38,27 +38,81 @@
 // 1 <= s.length <= 100
 // s contains only digits and may contain leading zero(s).
 
+// Top Down approach with dp
 class Solution {
-    public int numDecodings(String s) {
-        if (s.charAt(0) == '0' || s.length() == 0) {
+    private int numDecodings(String s, int index, int[] dp) {       
+        if (index > s.length() - 1) {
+            return 1;
+        }
+        
+        if (s.charAt(index) == '0') {
             return 0;
         }
-        int n = s.length();
-        int[] dp = new int[n + 1];
 
+        if (dp[index] != -1) return dp[index];
+
+        int ans = numDecodings(s, index + 1, dp);
+        if (index + 2 <= s.length()) {
+            int twoDigit = Integer.parseInt(s.substring(index, index + 2));
+            if (twoDigit >= 10 && twoDigit <= 26) ans += numDecodings(s, index + 2, dp);
+        }
+        
+        return dp[index] = ans;
+    }
+
+    public int numDecodings(String s) {
+        int[] dp = new int[s.length()];
+        Arrays.fill(dp, -1);
+        return numDecodings(s, 0, dp);
+    }
+}
+
+// Bottom Up Approach
+class Solution {
+    public int numDecodings(String s) {
+        if (s.startsWith("0") || s.length() == 0) {
+            return 0;
+        }
+
+        int[] dp = new int[s.length() + 1];
         dp[0] = 1;
-        dp[1] = 1;
-        for (int i = 2; i < n + 1; i++) {
-            int oneDigit = s.charAt(i - 1) - '0';
-            int twoDigit = Integer.parseInt(s.substring(i - 2, i));
+        dp[1] = s.charAt(0) != '0' ? 1: 0;
 
-            if (oneDigit != 0) {
-                dp[i] += dp[i - 1];
-            }
+        for(int i = 2; i <= s.length(); i++) {
+            if (s.charAt(i - 1) != '0') dp[i] += dp[i - 1];
+
+            int twoDigit = Integer.parseInt(s.substring(i - 2, i));
             if (twoDigit >= 10 && twoDigit <= 26) {
                 dp[i] += dp[i - 2];
             }
         }
-        return dp[n];
+
+        return dp[s.length()];
+    }
+}
+
+// Space optimised bottom up approach
+class Solution {
+    public int numDecodings(String s) {
+        if (s.startsWith("0") || s.length() == 0) {
+            return 0;
+        }
+
+        int prev2 = 1;
+        int prev1 = s.charAt(0) != '0' ? 1: 0;
+
+        for(int i = 2; i <= s.length(); i++) {
+            int cur = 0;
+            if (s.charAt(i - 1) != '0') cur += prev1;
+
+            int twoDigit = Integer.parseInt(s.substring(i - 2, i));
+            if (twoDigit >= 10 && twoDigit <= 26) {
+                cur += prev2;
+            }
+            prev2 = prev1;
+            prev1 = cur;
+        }
+
+        return prev1;
     }
 }
