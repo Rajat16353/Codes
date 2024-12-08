@@ -32,49 +32,29 @@
 // grid[i][j] is '0' or '1'.
 
 class Solution {
-    private void bfs(char[][] grid, int row, int column, Set<Pair<Integer, Integer>> visited) {
-        Queue<Pair<Integer, Integer>> queue = new LinkedList<>();
-        Pair<Integer, Integer> rc = new Pair(row, column);
-        
-        visited.add(rc);
-        queue.offer(rc);
+    private void bfs(char[][] grid, int r, int c) {
+        if (r < 0 || c < 0 || r >= grid.length || c >= grid[0].length || grid[r][c] == '0') {
+            return;
+        }
 
-        while(!queue.isEmpty()) {
-            Pair<Integer, Integer> rc1 = queue.poll();
-            
-            int r = rc1.getKey();
-            int c = rc1.getValue();
-            
-            int[][] iterations = {{r+1, c}, {r, c+1}, {r-1, c}, {r, c-1}};
+        grid[r][c] = '0';
 
-            for(int[] i: iterations) {
-                Pair<Integer, Integer> pair = new Pair<>(i[0], i[1]);
-                
-                if (i[0] < grid.length && i[0] >= 0 && i[1] < grid[0].length && i[1] >= 0 && !visited.contains(pair) && grid[i[0]][i[1]] == '1') {
-                    queue.offer(pair);
-                    visited.add(pair);
+        bfs(grid, r + 1, c);
+        bfs(grid, r - 1, c);
+        bfs(grid, r, c + 1);
+        bfs(grid, r, c - 1);
+    }
+    public int numIslands(char[][] grid) {
+        int islands = 0;
+        for (int r = 0; r < grid.length; r++) {
+            for (int c = 0; c < grid[r].length; c++) {
+                if (grid[r][c] == '1') {
+                    bfs(grid, r, c);
+                    islands++;
                 }
             }
         }
-    }
-    
-    public int numIslands(char[][] grid) {        
-        int rows = grid.length, columns = grid[0].length;
-        
-        Set<Pair<Integer, Integer>> visited = new HashSet<>();
-        
-        int islands = 0;
-        
-        for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < columns; c++) {
-                if (grid[r][c] == '1' && !visited.contains(new Pair(r, c)))                               
-                {
-                    bfs(grid, r, c, visited);
-                    islands += 1;
-                } 
-            }
-        }
-        
+
         return islands;
     }
 }
