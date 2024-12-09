@@ -37,70 +37,77 @@
 // 0 <= value <= 105
 // At most 2 * 105 calls will be made to get and put.
 
-public class Node {
-    int key;
-    int val;
-    Node prev;
-    Node next;
-    
-    public Node(int keyStored, int value) {
-        key = keyStored;
-        val = value;
-        prev = null;
-        next = null;
-    }
-}
-
 class LRUCache {
-    int cap;
-    Map<Integer, Node> cache;
-    Node left;
-    Node right;
-    
-    
+    class Node {
+        int key;
+        int value;
+        Node next;
+        Node prev;
+
+        public Node(int key, int value) {
+            this.key = key;
+            this.value = value;
+            next = null;
+            prev = null;
+        }
+    }
+
+    int capacity;
+    Map<Integer, Node> cache = new HashMap<>();
+    Node first;
+    Node end;
+
     public LRUCache(int capacity) {
-        cap = capacity;
-        cache = new HashMap<>();
-        
-        left = new Node(0, 0);
-        right = new Node(0, 0);
-        left.next = right;
-        right.prev = left;
-    }
-    
-    public void remove(Node node) {
-        node.prev.next = node.next;
-        node.next.prev = node.prev;
-    }
-    
-    public void insert(Node node) {
-        node.prev = right.prev;
-        right.prev.next = node;
-        right.prev = node;
-        node.next = right;
+        this.capacity = capacity;
+        initializeDoublyLinkedList();
     }
     
     public int get(int key) {
-        if (cache.containsKey(key)) {
-            remove(cache.get(key));
-            insert(cache.get(key));
-            return cache.get(key).val;
-        }
-        return -1;
+        if (!cache.containsKey(key)) return -1;
+
+        Node node = cache.get(key);
+        removeNode(node);
+        markRecentlyUsed(node);
+        return node.value;
     }
     
     public void put(int key, int value) {
+        Node node = null;
         if (cache.containsKey(key)) {
-            remove(cache.get(key));
+            removeNode(cache.get(key));
         }
-        cache.put(key, new Node(key, value));
-        insert(cache.get(key));
-        
-        if (cache.size() > cap) {
-            Node lru = left.next;
-            remove(lru);
-            cache.remove(lru.key);
-        }
+        node = new Node(key, value);
+        markRecentlyUsed(node);
+        cache.put(key, node);
+
+        if(cache.size() > capacity) removeLRU();
+    }
+
+    private void initializeDoublyLinkedList() {
+        first = new Node(0, 0);
+        end = new Node(0, 0);
+
+        first.next = end;
+        end.prev = first;
+    }
+
+    private void removeNode(Node node) {
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+    }
+
+    // Insert at beginning
+    private void markRecentlyUsed(Node node) {
+        node.next = first.next;
+        first.next.prev = node;
+        first.next = node;
+        node.prev = first;
+    }
+
+    private void removeLRU() {
+        Node lru = end.prev;
+        removeNode(lru);
+        cache.remove(lru.key);
     }
 }
 
