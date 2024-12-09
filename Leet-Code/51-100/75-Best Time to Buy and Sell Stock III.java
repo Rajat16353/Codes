@@ -30,43 +30,74 @@
 // 1 <= prices.length <= 105
 // 0 <= prices[i] <= 105
 
+// Recursion with memoisation Exceeds time limit
+class Solution {
+    private int maxProfitBacktrack(int[] prices, int index, boolean canBuy, int budget, Map<Key, Integer> dp) {
+        if (budget == 0 && canBuy) return 0;
+
+        if (index == prices.length) return 0;
+
+        Key key = new Key(index, budget, canBuy);
+        if (dp.containsKey(key)) return dp.get(key);
+        int profit = 0;
+
+        if (canBuy) {
+            profit = Math.max(maxProfitBacktrack(prices, index + 1, false, budget - 1, dp) - prices[index], maxProfitBacktrack(prices, index + 1, true, budget, dp));
+        } else {
+            profit = Math.max(maxProfitBacktrack(prices, index + 1, true, budget, dp) + prices[index], maxProfitBacktrack(prices, index + 1, false, budget, dp));
+        }
+
+        dp.put(key, profit);
+        return profit;
+    }
+
+    public int maxProfit(int[] prices) {
+        Map<Key, Integer> dp = new HashMap<>();
+        return maxProfitBacktrack(prices, 0, true, 2, dp);
+    }
+
+    class Key {
+        public int index;
+        public int budget;
+        public boolean canBuy;
+
+        public Key(int index, int budget, boolean canBuy) {
+            this.index = index;
+            this.budget = budget;
+            this.canBuy = canBuy;
+        }
+    }
+}
+
+// Tabulation
 class Solution {
     public int maxProfit(int[] prices) {
-        int l = prices.length;
-        int profit[] = new int[l];
-        
-        int maxP = prices[l-1]; 
-        
-        for(int i = l-2; i >= 0; i--) {
-            if (maxP < prices[i]) {
-                maxP = prices[i];
-                profit[i] = profit[i+1];
-            }
-            else {
-                int p = maxP - prices[i];
-                if (p > profit[i+1])
-                    profit[i] = p;
-                else
-                    profit[i] = profit[i+1];
-            }
+        int n = prices.length;
+        int[] dp1 = new int[n];
+        int[] dp2 = new int[n];
+
+        int min = prices[0];
+        int max = 0;
+        dp1[0] = 0;
+
+        for(int i = 1; i < n; i++) {
+            dp1[i] = Math.max(dp1[i - 1], prices[i] - min);
+            min = Math.min(min, prices[i]);
         }
-        
-        int minP = prices[0];
-        for(int i = 1; i < l; i++) {
-            if (minP > prices[i]) {
-                minP = prices[i];
-                profit[i] = profit[i-1];
-            }
-            else {
-                int p = prices[i] - minP;
-                
-                if (p+profit[i] > profit[i-1])
-                    profit[i] += p;
-                else
-                    profit[i] = profit[i-1];
-            }
+
+        max = prices[n - 1];
+        dp2[n - 1] = 0;
+
+        for (int i = n - 2; i >= 0; i--) {
+            dp2[i] = Math.max(dp2[i + 1], max - prices[i]);
+            max = Math.max(max, prices[i]);
         }
-        
-        return profit[l-1];
+
+        max = 0;
+        for (int i = 0; i < n; i++) {
+            max = Math.max(max, dp1[i] + dp2[i]);
+        }
+
+        return max;
     }
 }
