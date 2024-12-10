@@ -23,24 +23,49 @@
 // 1 <= m, n <= 200
 // 0 <= grid[i][j] <= 100
 
+// Recursion with memoisation
+class Solution {
+    private int minPathSum(int[][] grid, int r, int c, int[][] dp) {
+        if (dp[r][c] != 0) return dp[r][c];
+        
+        if (r == 0 && c == 0) {
+            return grid[r][c];
+        }
+        int up = Integer.MAX_VALUE, left = Integer.MAX_VALUE;
+        if (r > 0) up = grid[r][c] + minPathSum(grid, r - 1, c, dp);
+        if (c > 0) left = grid[r][c] + minPathSum(grid, r, c - 1, dp);
+
+        return dp[r][c] = Math.min(up, left);
+    }
+
+    public int minPathSum(int[][] grid) {
+        int m = grid.length;
+        int n = grid[0].length;
+        int[][] dp = new int[m][n];
+        return minPathSum(grid, m - 1, n - 1, dp);
+    }
+}
+
+// Tabulation approach
 class Solution {
     public int minPathSum(int[][] grid) {
-        int r = grid.length, c = grid[0].length;
-        int[][] result = new int[r+1][c+1];
-        for(int i = 0; i < r+1; i++) {
-            for(int j = 0; j< c+1; j++) {
-                if(i == r && j == c-1)
-                    result[i][j] = 0;
-                else
-                    result[i][j] = Integer.MAX_VALUE;
+        int m = grid.length;
+        int n = grid[0].length;
+        int[][] dp = new int[m][n];
+
+        for (int r = 0; r < m; r++) {
+            for (int c = 0; c < n; c++){
+                if (r == 0 && c == 0) {
+                    dp[r][c] = grid[r][c];
+                } else {
+                    int up = Integer.MAX_VALUE, left = Integer.MAX_VALUE;
+                    if (r > 0) up = grid[r][c] + dp[r - 1][c];
+                    if (c > 0) left = grid[r][c] + dp[r][c - 1];
+                    dp[r][c] = Math.min(up, left);
+                }
             }
         }
         
-        for(int i = r-1; i > -1; i--){
-            for(int j = c-1; j > -1; j--) {
-                result[i][j] = grid[i][j] + Math.min(result[i+1][j], result[i][j+1]);
-            }   
-        }            
-        return result[0][0];
+        return dp[m - 1][n - 1];
     }
 }
