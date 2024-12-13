@@ -130,3 +130,31 @@ class Solution {
         return result;
     }
 }
+
+// Using TreeSet - sorted set
+class Solution {
+    public int[] shortestDistanceAfterQueries(int n, int[][] queries) {
+        TreeSet<Integer> sortedSet = new TreeSet<>();
+
+        for (int i = 0; i < n; i++) {
+            sortedSet.add(i);
+        }
+
+        int[] result = new int[queries.length];
+        int i = 0;
+
+        for(int[] query: queries) {
+            int l = query[0];
+            int r = query[1];
+            removeInRange(sortedSet, l, r);
+            result[i++] = sortedSet.size() - 1;
+        }
+
+        return result;
+    }
+
+    private void removeInRange(TreeSet<Integer> sortedSet, int l, int r) {
+        List<Integer> subsetToRemove = new ArrayList<>(sortedSet.subSet(l, false, r, false));
+        sortedSet.removeAll(subsetToRemove);
+    }
+}
