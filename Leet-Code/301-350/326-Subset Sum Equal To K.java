@@ -92,3 +92,30 @@ public class Solution {
         return dp[arr.length - 1][k];
     }
 }
+
+// Tabulation with optimised memory
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static boolean subsetSumToK(int n, int k, int arr[]){
+        boolean[] dp = new boolean[k + 1];
+        
+        dp[0] = true;
+        if (arr[0] < k) dp[arr[0]] = true;
+
+        for (int index = 1; index < arr.length; index++) {
+            boolean[] cur = new boolean[k + 1];
+            cur[0] = true;
+            for (int target = 1; target <= k; target++) {
+                boolean notTake = dp[target];
+                boolean take = false;
+                if (arr[index] <= target) take = dp[target - arr[index]];
+
+                cur[target] = take | notTake;
+            }
+            dp = cur;
+        }
+
+        return dp[k];
+    }
+}
