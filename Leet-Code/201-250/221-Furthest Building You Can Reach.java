@@ -43,24 +43,16 @@ class Solution {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
         for (int i = 0; i < heights.length - 1; i++) {
-            int diff = heights[i + 1] - heights[i];
+            int jump = heights[i + 1] - heights[i];
 
-            if (diff > 0) {
-                if (ladders > 0) {
-                    minHeap.offer(diff);
-                    ladders--;
-                } else if (!minHeap.isEmpty() && minHeap.peek() < diff) {
-                    bricks -= minHeap.poll();
-                    minHeap.offer(diff);
-                } else {
-                    bricks -= diff;
-                }
+            if (jump > 0) minHeap.offer(jump);
+            if (minHeap.size() > ladders) {
+                bricks -= minHeap.poll();
             }
 
-            if (bricks < 0) {
-                return i;
-            }
+            if (bricks < 0) return i;
         }
+
         return heights.length - 1;
     }
 }
