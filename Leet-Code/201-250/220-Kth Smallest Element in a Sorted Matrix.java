@@ -69,3 +69,43 @@ class Solution {
         return result;
     }
 }
+
+// Using 2 binary searches
+class Solution {
+    private int countSmaller(int[][] matrix, int mid) {
+        int count = 0, n = matrix.length;
+        
+        for(int i = 0; i < n; i++) {
+            int l = 0, r = n;
+            while (l < r && l != n) {
+                int m = l + (r - l)/2;
+                if (mid >= matrix[i][m]) {
+                    l = m + 1;
+                } else {
+                    r = m;
+                }
+            }
+
+            count += l;
+        }
+        return count;
+    }
+
+    public int kthSmallest(int[][] matrix, int k) {
+        int n = matrix.length;
+        int low = matrix[0][0], high = matrix[n - 1][n - 1];
+
+        while (low < high) {
+            int mid = low + (high - low)/2;
+            int count = countSmaller(matrix, mid);
+
+            if (count < k) {
+                low = mid + 1;
+            } else {
+                high = mid;
+            }
+        }
+
+        return low;
+    }
+}
