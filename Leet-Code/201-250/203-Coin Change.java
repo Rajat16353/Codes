@@ -44,3 +44,76 @@ class Solution {
         return dp[amount] == amount+1 ? -1: dp[amount];
     }
 }
+
+// Recursion
+class Solution {
+    public int coinChange(int[] coins, int amount) {
+        int[][] dp = new int[coins.length][amount + 1];
+        Arrays.stream(dp).forEach(row -> Arrays.fill(row, -1));
+        int res = coinChange(coins, coins.length - 1, amount, dp);
+        return res == 100000 ? -1: res;
+    }
+
+    private int coinChange(int[] coins, int index, int amount, int[][] dp) {
+        if (index == 0) {
+            if (amount % coins[0] == 0) return amount/coins[0];
+            return 100000;
+        }
+
+        if (dp[index][amount] != -1) return dp[index][amount];
+
+        int notTake = coinChange(coins, index - 1, amount, dp);
+        int take = 100000;
+        if (coins[index] <= amount) {
+            take = 1 + coinChange(coins, index, amount - coins[index], dp);
+        }
+        
+        return dp[index][amount] = Math.min(take, notTake);
+    }
+}
+
+// Tabulation
+class Solution {
+    public int coinChange(int[] coins, int amount) {
+        int n = coins.length;
+        int[][] dp = new int[n][amount + 1];
+        for (int target = 0; target <= amount; target++) {
+            dp[0][target] = target % coins[0] == 0 ? target / coins[0] : 100000;
+        }
+
+        for (int index = 1; index < n; index++) {
+            for (int target = 0; target <= amount; target++) {
+                int notTake = dp[index - 1][target];
+                int take = 100000;
+                if (coins[index] <= target) take = 1 + dp[index][target - coins[index]];
+                
+                dp[index][target] = Math.min(take, notTake);
+            }
+        }
+
+        return dp[n - 1][amount] == 100000 ? -1: dp[n - 1][amount];
+    }
+}
+
+// Space optimised tabulation
+class Solution {
+    public int coinChange(int[] coins, int amount) {
+        int n = coins.length;
+        int[][] dp = new int[n][amount + 1];
+        for (int target = 0; target <= amount; target++) {
+            dp[0][target] = target % coins[0] == 0 ? target / coins[0] : 100000;
+        }
+
+        for (int index = 1; index < n; index++) {
+            for (int target = 0; target <= amount; target++) {
+                int notTake = dp[index - 1][target];
+                int take = 100000;
+                if (coins[index] <= target) take = 1 + dp[index][target - coins[index]];
+                
+                dp[index][target] = Math.min(take, notTake);
+            }
+        }
+
+        return dp[n - 1][amount] == 100000 ? -1: dp[n - 1][amount];
+    }
+}
