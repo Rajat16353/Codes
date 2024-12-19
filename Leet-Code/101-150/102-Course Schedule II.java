@@ -77,3 +77,41 @@ class Solution {
         return finalOrder;
     }
 }
+
+// Using Kahn's algorithm (Topological sort)
+class Solution {
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+        Queue<Integer> queue = new LinkedList<>();
+        Set<Integer> visited = new HashSet<>();
+
+        int[] degree = new int[numCourses];
+        int[] result = new int[numCourses];
+
+        for (int[] pre: prerequisites) {
+            degree[pre[0
+            ]] += 1;
+            graph.computeIfAbsent(pre[1], k -> new ArrayList<>()).add(pre[0]);
+        }
+
+        for (int i = 0; i < numCourses; i++) {
+            if (degree[i] == 0) queue.offer(i);
+        }
+
+        int i = 0;
+        while(!queue.isEmpty()) {
+            int course = queue.poll();
+            result[i++] = course;
+            
+            if (graph.containsKey(course)) {
+                for(int vertex: graph.get(course)) {
+                    degree[vertex] -= 1;
+                    if(degree[vertex] == 0) queue.offer(vertex);
+                }
+            }
+        }
+
+        if (i == numCourses) return result;
+        return new int[]{};
+    }
+}
