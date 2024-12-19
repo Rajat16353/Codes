@@ -27,42 +27,96 @@
 // -106 <= xi, yi <= 106
 // All pairs (xi, yi) are distinct.
 
+// Prims
 class Solution {
-     public static int manhattan_distance(int[] p1, int[] p2) {
-        return Math.abs(p1[0] - p2[0]) + Math.abs(p1[1] - p2[1]);
-    }
-
     public int minCostConnectPoints(int[][] points) {
-        int n = points.length;
-        boolean[] visited = new boolean[n];
-        HashMap<Integer, Integer> heap_dict = new HashMap<>();
-        heap_dict.put(0, 0);
+        Map<Integer, List<Pair>> adjacencyList = new HashMap<>();
+
+        for (int i = 0; i < points.length; i++) {
+            for (int j = i + 1; j < points.length; j++) {
+                int dist = Math.abs(points[i][0] - points[j][0]) + Math.abs(points[i][1] - points[j][1]);
+                adjacencyList.computeIfAbsent(i, k -> new ArrayList<>()).add(new Pair(dist, j));
+                adjacencyList.computeIfAbsent(j, k -> new ArrayList<>()).add(new Pair(dist, i));
+            }
+        }
+
+        int res = 0;
+        PriorityQueue<Pair> minHeap = new PriorityQueue<>(new PairComparator());
+        minHeap.offer(new Pair(0, 0));
+        Set<Integer> visited = new HashSet<>();
         
-        PriorityQueue<int[]> min_heap = new PriorityQueue<>((a, b) -> Integer.compare(a[0], b[0]));
-        min_heap.add(new int[]{0, 0});
-        
-        int mst_weight = 0;
-        
-        while (!min_heap.isEmpty()) {
-            int[] top = min_heap.poll();
-            int w = top[0], u = top[1];
-            
-            if (visited[u] || heap_dict.getOrDefault(u, Integer.MAX_VALUE) < w) continue;
-            
-            visited[u] = true;
-            mst_weight += w;
-            
-            for (int v = 0; v < n; ++v) {
-                if (!visited[v]) {
-                    int new_distance = manhattan_distance(points[u], points[v]);
-                    if (new_distance < heap_dict.getOrDefault(v, Integer.MAX_VALUE)) {
-                        heap_dict.put(v, new_distance);
-                        min_heap.add(new int[]{new_distance, v});
+
+        while(visited.size() != points.length) {
+            Pair top = minHeap.poll();
+            if (visited.contains(top.point)) continue;
+
+            res += top.dist;
+            visited.add(top.point);
+            if (adjacencyList.containsKey(top.point)) {
+                for (Pair pt: adjacencyList.get(top.point)) {
+                    if (!visited.contains(pt)) {
+                        minHeap.offer(pt);
                     }
                 }
             }
         }
+
+        return res;
+    }
+
+    private class Pair {
+        int dist;
+        int point;
+
+        public Pair(int dist, int point) {
+            this.dist = dist;
+            this.point = point;
+        }
+    }
+
+    class PairComparator implements Comparator<Pair> {
+        @Override
+        public int compare(Pair a, Pair b) {
+            return Integer.compare(a.dist, b.dist);
+        }
+    }
+}
+
+// Optmised Prims
+class Solution {
+    public int minCostConnectPoints(int[][] points) {
+        int n = points.length;
+        int weight = 0;
+        Map<Integer, Integer> heapDict = new HashMap<>();
+        heapDict.put(0, 0);
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> Integer.compare(a[0], b[0]));
+        minHeap.offer(new int[]{0, 0});
+        boolean[] visited = new boolean[n];
         
-        return mst_weight;
+        while(!minHeap.isEmpty()) {
+            int[] top = minHeap.poll();
+            int w = top[0], u = top[1];
+            
+            if (visited[u] || heapDict.getOrDefault(u, Integer.MAX_VALUE) < w) continue;
+
+            weight += w;
+            visited[u] = true;
+
+            for (int v = 0; v < n; v++) {
+                if (!visited[v]) {
+                    int newDistance = manhattanDistance(points[u], points[v]);
+                    if (newDistance < heapDict.getOrDefault(v, Integer.MAX_VALUE)) {
+                        heapDict.put(v, newDistance);
+                        minHeap.offer(new int[]{newDistance, v});
+                    }
+                }
+            }
+        }
+
+        return weight;
+    }
+
+    private int manhattanDistance(int[] a, int[] b) {
+        return Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]);
     }
 }
