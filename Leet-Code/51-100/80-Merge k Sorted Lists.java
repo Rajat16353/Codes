@@ -90,3 +90,46 @@ class Solution {
         return list.get(0);
     }
 }
+
+// Using min heap
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists == null || lists.length == 0) return null;
+
+        ListNode head = new ListNode();
+        ListNode temp = new ListNode();
+        head = temp;
+        PriorityQueue<ListNode> minHeap = new PriorityQueue<>(new ListNodeComparator());
+
+        for(ListNode node: lists) {
+            if (node != null) minHeap.offer(node);
+        }
+
+        while (!minHeap.isEmpty()) {
+            temp.next = minHeap.poll();
+            temp = temp.next;
+            if (temp.next != null) minHeap.offer(temp.next);
+        }
+
+        return head.next;
+    }
+
+    private class ListNodeComparator implements Comparator<ListNode> {
+        @Override
+        public int compare(ListNode a, ListNode b) {
+            return Integer.compare(a.val, b.val);
+        }
+    }
+
+}
