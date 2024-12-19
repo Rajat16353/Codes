@@ -71,3 +71,99 @@ class Solution {
         return cache[1];
     }
 }
+
+// Recursive
+class Solution {
+    Map<Integer, Integer> freqMap;
+    public int deleteAndEarn(int[] nums) {
+        freqMap = new HashMap<>();
+        
+        for (int n: nums) {
+            freqMap.put(n, freqMap.getOrDefault(n, 0) + 1);
+        }
+
+        int[] dp = new int[freqMap.size()];
+        List<Integer> list = new ArrayList<>(freqMap.keySet());
+        Collections.sort(list);
+        return recursion(list, freqMap.keySet().size() - 1, dp);
+    }
+
+    private int recursion(List<Integer> nums, int index, int[] dp) {
+        if (index < 0) return 0;
+        if (index == 0) return nums.get(index) * freqMap.get(nums.get(index));
+
+        if (dp[index] != 0) return dp[index];
+
+        int pick = 0;
+        if (nums.get(index) - nums.get(index - 1) == 1) {
+            pick = nums.get(index) * freqMap.get(nums.get(index)) + recursion(nums, index - 2, dp);
+        } else {
+            pick = nums.get(index) * freqMap.get(nums.get(index)) + recursion(nums, index - 1, dp);
+        }
+        int skip = recursion(nums, index - 1, dp);
+
+        return dp[index] = Math.max(pick, skip);
+    }
+}
+
+// Tabulation
+class Solution {
+    Map<Integer, Integer> freqMap;
+    public int deleteAndEarn(int[] nums) {
+        freqMap = new HashMap<>();
+        
+        for (int n: nums) {
+            freqMap.put(n, freqMap.getOrDefault(n, 0) + 1);
+        }
+
+        int[] dp = new int[freqMap.size()];
+        List<Integer> list = new ArrayList<>(freqMap.keySet());
+        Collections.sort(list);
+        dp[0] = list.get(0) * freqMap.get(list.get(0));
+        
+        for (int index = 1; index < list.size(); index++) {
+            int pick = list.get(index) * freqMap.get(list.get(index));
+            if (list.get(index) - list.get(index - 1) == 1) {
+                if (index > 1) pick += dp[index - 2];
+            } else {
+                pick += dp[index - 1];
+            }
+            int skip = dp[index - 1];
+            dp[index] = Math.max(pick, skip);
+        }
+
+        return dp[freqMap.size() - 1];
+    }
+}
+
+// Tabulation with optimised memory
+class Solution {
+    Map<Integer, Integer> freqMap;
+    public int deleteAndEarn(int[] nums) {
+        freqMap = new HashMap<>();
+        
+        for (int n: nums) {
+            freqMap.put(n, freqMap.getOrDefault(n, 0) + 1);
+        }
+
+        List<Integer> list = new ArrayList<>(freqMap.keySet());
+        Collections.sort(list);
+        int prev = list.get(0) * freqMap.get(list.get(0));
+        int prev2 = 0;
+
+        for (int index = 1; index < list.size(); index++) {
+            int pick = list.get(index) * freqMap.get(list.get(index));
+            if (list.get(index) - list.get(index - 1) == 1) {
+                if (index > 1) pick += prev2;
+            } else {
+                pick += prev;
+            }
+            int skip = prev;
+
+            prev2 = prev;
+            prev = Math.max(pick, skip);
+        }
+
+        return prev;
+    }
+}
