@@ -37,41 +37,34 @@ class Solution {
     public void solve(char[][] board) {
         int m = board.length;
         int n = board[0].length;
+        
         for (int r = 0; r < m; r++) {
             for (int c = 0; c < n; c++) {
                 if ((r == 0 || c == 0 || r == m - 1 || c == n - 1) && board[r][c] == 'O') {
-                    dfs(board, r, c, 'S');
+                    dfs(board, r, c);
                 }
             }
         }
 
         for (int r = 0; r < m; r++) {
             for (int c = 0; c < n; c++) {
-                if (board[r][c] == 'O') {
-                    dfs(board, r, c, 'X');
-                }
-            }
-        }
-
-        for (int r = 0; r < m; r++) {
-            for (int c = 0; c < n; c++) {
-                if (board[r][c] == 'S') {
-                    board[r][c] = 'O';
-                }
+                if (board[r][c] == '#') board[r][c] = 'O';
+                else if (board[r][c] == 'O') board[r][c] = 'X';
             }
         }
     }
 
     private final int[][] dirs = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
-    private void dfs(char[][] board, int r, int c, char ch) {
-        if (r < 0 || c < 0 || r >= board.length || c >= board[0].length || board[r][c] == 'X' || board[r][c] == 'S') {
+    private void dfs(char[][] board, int r, int c) {
+        if (r < 0 || c < 0 || r >= board.length || c >= board[0].length || board[r][c] == 'X' || board[r][c] == '#') {
             return;
         }
-        board[r][c] = ch;
+
+        board[r][c] = '#';
 
         for (int[] d: dirs) {
-            dfs(board, r + d[0], c + d[1], ch);
+            dfs(board, r + d[0], c + d[1]);
         }
     }
 }
