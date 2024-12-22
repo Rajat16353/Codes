@@ -34,25 +34,26 @@ class Solution {
         Stack<Integer> multiplier = new Stack<>();
         Stack<StringBuilder> decodedString = new Stack<>();
         StringBuilder currentString = new StringBuilder();
-        int k = 0;
 
-        for (char c: s.toCharArray()) {
-            if (Character.isDigit(c)) {
-                k = k * 10 + (int)(c - '0');
-            } else if (c == '[') {
+        int k = 0;
+        for (char ch: s.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                k = k * 10 + (ch - '0');
+            } else if (ch == '[') {
                 multiplier.push(k);
-                decodedString.push(currentString);
                 k = 0;
+                decodedString.push(currentString);
                 currentString = new StringBuilder();
-            } else if (c == ']') {
+            } else if (ch == ']') {
                 StringBuilder lastString = decodedString.pop();
                 int lastK = multiplier.pop();
-                while(lastK-- > 0) {
+
+                while (lastK-- > 0) {
                     lastString.append(currentString);
                 }
                 currentString = lastString;
             } else {
-                currentString.append(c);
+                currentString.append(ch);
             }
         }
 
