@@ -53,3 +53,52 @@ class Solution {
         return res;
     }
 }
+
+// Using Dynamic programming
+class Solution {
+    public String longestPalindrome(String s) {
+        int n = s.length();
+        int[][] dp = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            dp[i][i] = 1;
+        }
+
+        int maxLength = 1;
+        int pl = 0, pr = 0;
+        int l = 0, r = 1;
+
+        while (r < n) {
+            if (s.charAt(l) == s.charAt(r)) {
+                maxLength = 2;
+                pl = l;
+                pr = r;
+                dp[l][r] = 1;
+            } else {
+                dp[l][r] = 0;
+            }
+            l++;
+            r++;
+        }
+
+        int diff = 2;
+        for (int i = 0; i < n && diff < n; diff++) {
+            for (int j = i; j < n; j++) {
+                l = j;
+                r = j + diff;
+                if (r >= n) break;
+                if (s.charAt(l) == s.charAt(r) && dp[l + 1][r - 1] == 1) {
+                    dp[l][r] = 1;
+                    if (maxLength < r - l + 1) {
+                        maxLength = r - l + 1;
+                        pl = l;
+                        pr = r;
+                    }
+                } else {
+                    dp[l][r] = 0;
+                }
+            }
+        }
+        return s.substring(pl, pr + 1);
+    }
+}
