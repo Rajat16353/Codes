@@ -42,3 +42,26 @@ class Solution {
         return Arrays.stream(lis).summaryStatistics().getMax();
     }
 }
+
+// using recursion and memoization
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length;
+        int[][] dp = new int[n][n];
+        return recursion(0, -1, nums, dp);
+    }
+
+    private int recursion(int idx, int prevIdx, int[] nums, int[][] dp) {
+        if (idx == nums.length) {
+            return 0;
+        }
+
+        if (dp[idx][prevIdx + 1] != 0) return dp[idx][prevIdx + 1];
+
+        int take = 0;
+        if (prevIdx == -1 || nums[idx] > nums[prevIdx]) take = 1 + recursion(idx + 1, idx, nums, dp);
+        int notTake = recursion(idx + 1, prevIdx, nums, dp);
+
+        return dp[idx][prevIdx + 1] = Math.max(take, notTake);
+    }
+}
