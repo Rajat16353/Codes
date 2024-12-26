@@ -48,3 +48,39 @@ class Solution {
         return findTargetSumWaysCount(0, 0, cache, nums, target);
     }
 }
+
+// Using the same solution as 355-Partitions With Given Difference.java
+class Solution {
+    public int countPartitions(int n, int d, int[] arr) {
+		int totalSum = 0;
+		for (int num: arr) {
+			totalSum += num;
+		}
+
+		if (totalSum - d < 0 || (totalSum - d) % 2 != 0) return 0;
+
+		int target = (totalSum - d)/2;
+		int[] dp = new int[target + 1];
+		dp[0] = 1;
+		if (arr[0] <= target) dp[arr[0]] = 1;
+		if (arr[0] == 0) dp[0] = 2;
+
+		for (int idx = 1; idx < n; idx++) {
+			int[] cur = new int[target + 1];
+			for (int sum = 0; sum <= target; sum++) {
+				int pick = 0;
+				if (arr[idx] <= sum) pick = dp[sum - arr[idx]];
+				int skip = dp[sum];
+
+				cur[sum] = (skip + pick);
+			}
+			dp = cur;
+		}
+		
+		return dp[target];
+	}
+
+    public int findTargetSumWays(int[] nums, int target) {
+        return countPartitions(nums.length, target, nums);
+    }
+} 
