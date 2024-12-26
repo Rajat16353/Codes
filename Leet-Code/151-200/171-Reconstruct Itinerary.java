@@ -64,3 +64,31 @@ class Solution {
         return itinerary;
     }
 }
+
+// Using eulerian path
+class Solution {
+    List<String> result;
+    Map<String, PriorityQueue<String>> graph;
+    public List<String> findItinerary(List<List<String>> tickets) {
+        result = new ArrayList<>();
+        graph = new HashMap<>();
+        for (List<String> paths: tickets) {
+            graph.computeIfAbsent(paths.get(0), k -> new PriorityQueue<>()).add(paths.get(1));
+        }
+
+        dfs("JFK");
+
+        return result;
+    }
+
+    private void dfs(String src) {
+        PriorityQueue<String> nbrs = graph.get(src);
+
+        while (nbrs != null && !nbrs.isEmpty()) {
+            String nbr = nbrs.poll();
+            dfs(nbr);
+        }
+
+        result.addFirst(src);
+    }
+}
