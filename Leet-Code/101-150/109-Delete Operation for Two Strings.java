@@ -84,3 +84,35 @@ class Solution {
         return len[len1-1][len2-1];
     }
 }
+
+// Using longest palindromic subsequence 108,
+class Solution {    
+    public int minDistance(String word1, String word2) {
+        int lcs = longestCommonSubsequence(word1, word2);
+        int n = word1.length();
+        int m = word2.length();
+
+        return n + m - 2 * lcs;
+    }
+
+    private int longestCommonSubsequence(String text1, String text2) {
+        int l1 = text1.length();
+        int l2 = text2.length();
+        int[] dp = new int[l2 + 1];
+
+        for (int idx1 = 1; idx1 <= l1; idx1++) {
+            int[] cur = new int[l2 + 1];
+            for (int idx2 = 1; idx2 <= l2; idx2++) {
+                if (text1.charAt(idx1 - 1) == text2.charAt(idx2 - 1)) {
+                    cur[idx2] = 1 + dp[idx2 - 1];
+                    continue;
+                }
+
+                cur[idx2] = Math.max(dp[idx2], cur[idx2 - 1]);
+            }
+            dp = cur;
+        }
+        
+        return dp[l2];
+    }
+}
