@@ -114,62 +114,70 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
+// Without extra stack space
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
 class Solution {
-    private ListNode reverse(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode dummy = new ListNode();
+        ListNode curr = dummy;
 
-        ListNode newHead = reverse(head.next);
-        ListNode front = head.next;
-        front.next = head;
-        head.next = null;
-
-        return newHead;
-    }
-
-    private ListNode getKthNode(ListNode node, int k) {
-        k -= 1;
-        while (node != null && k > 0) {
-            k--;
-            node = node.next;
-        }
-
-        return node;
-    }
-
-    public ListNode reverseKGroup(ListNode head, int k) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        
-        ListNode temp = head, prevNode = null;
-
-        while (temp != null) {
-            ListNode kthNode = getKthNode(temp, k);
-
-            if (kthNode == null) {
-                if (prevNode != null) {
-                    prevNode.next = temp;
-                }
-                break;
-            }
-
-            ListNode nextNode = kthNode.next;
-            kthNode.next = null;
-
-            reverse(temp);
-
-            if (temp == head) {
-                head = kthNode;
+        while (list1 != null && list2 != null) {
+            if (list1.val <= list2.val) {
+                curr.next = list1;
+                list1 = list1.next;
             } else {
-                prevNode.next = kthNode;
+                curr.next = list2;
+                list2 = list2.next;
             }
-
-            prevNode = temp;
-            temp = nextNode;
+            curr = curr.next;
         }
 
-        return head;
+        if (list1 != null) {
+            curr.next = list1;
+        } else {
+            curr.next = list2;
+        }
+
+        return dummy.next;
+    }
+}
+
+// Recursive
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        return recursion(list1, list2);
+    }
+
+    private ListNode recursion(ListNode list1, ListNode list2) {
+        if (list1 == null) return list2;
+        if (list2 == null) return list1;
+
+        if (list1.val <= list2.val) {
+            list1.next = recursion(list1.next, list2);
+            return list1;
+        } else {
+            list2.next = recursion(list1, list2.next);
+            return list2;
+        }
     }
 }
