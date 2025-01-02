@@ -89,8 +89,7 @@ class Solution {
         int[] result = new int[numCourses];
 
         for (int[] pre: prerequisites) {
-            degree[pre[0
-            ]] += 1;
+            degree[pre[0]] += 1;
             graph.computeIfAbsent(pre[1], k -> new ArrayList<>()).add(pre[0]);
         }
 
