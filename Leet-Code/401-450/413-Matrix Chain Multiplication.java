@@ -58,3 +58,57 @@ public class Solution {
 		return dp[i][j] = mini;
 	}
 }
+
+// Using tabulation
+import java.util.* ;
+import java.io.*; 
+
+public class Solution {
+	public static int matrixMultiplication(int[] arr , int N) {
+		int[][] dp = new int[N][N];
+		
+		for (int i = N - 1; i >= 1; i--) {
+			for (int j = i + 1; j < N; j++) {
+				int mini = Integer.MAX_VALUE;
+				for (int k = i; k < j; k++) {
+					int steps = arr[i - 1] * arr[k] * arr[j] + dp[i][k] + dp[k + 1][j];
+
+					if (steps < mini) mini = steps;
+				}
+
+				dp[i][j] = mini;
+			}
+		}
+
+		return dp[1][N - 1];
+	}
+}
+
+// Tabulation
+class Solution {
+    public int minCost(int n, int[] cuts) {
+        List<Integer> cutList = new ArrayList<>();
+        cutList.add(0);
+        Arrays.stream(cuts).forEach(cut -> cutList.add(cut));
+        cutList.add(n);
+        Collections.sort(cutList);
+        int c = cuts.length;
+        int cs = cutList.size();
+        int[][] dp = new int[cs + 1][cs + 1];
+        
+        for (int i = c; i >= 1; i--) {
+            for (int j = 1; j <= c; j++) {
+                if (i > j) continue;
+                int mini = Integer.MAX_VALUE;
+                for (int k = i; k <= j; k++) {
+                    int len = cutList.get(j + 1) - cutList.get(i - 1) + dp[i][k - 1] + dp[k + 1][j];
+                    if (len < mini) mini = len;
+                }
+
+                dp[i][j] = mini;
+            }
+        }
+
+        return dp[1][c];
+    }
+}
