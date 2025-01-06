@@ -65,3 +65,42 @@ class Solution {
         return dp[idx][prevIdx + 1] = Math.max(take, notTake);
     }
 }
+
+// Using binary search
+public class Solution {
+    public int lengthOfLIS(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int n = nums.length;
+        List<Integer> sortedList = new ArrayList<>();
+        sortedList.add(nums[0]);
+
+        for (int i = 1; i < n; i++) {
+            if (nums[i] > sortedList.get(sortedList.size() - 1)) {
+                sortedList.add(nums[i]);
+            } else {
+                int idx = lowerBound(nums[i], sortedList);
+                sortedList.set(idx, nums[i]);   
+            }
+        }
+
+        return sortedList.size();
+    }
+
+    private int lowerBound(int num, List<Integer> list) {
+        int low = 0;
+        int high = list.size() - 1;
+
+        while (low <= high) {
+            int mid = (low + high)/2;
+            if (list.get(mid) >= num) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return low;
+    }
+}
