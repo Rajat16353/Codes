@@ -87,31 +87,25 @@ class Solution {
 class Solution {
     public int largestRectangleArea(int[] heights) {
         Stack<Integer> index = new Stack<>();
-        Stack<Integer> value = new Stack<>();
+        int n = heights.length;
         
         int maxArea = Integer.MIN_VALUE;
 
-        for(int i = 0; i < heights.length; i++) {
+        for(int i = 0; i < n; i++) {
             int area = 0;
-            if (index.isEmpty() || (!value.isEmpty() && value.peek() <= heights[i])) {
-                
-            } else {
-                while (!value.isEmpty() && heights[i] < value.peek()) {
-                    index.pop();
-                    int lse = index.isEmpty() ? -1: index.peek();
-                    maxArea = Math.max(maxArea, value.pop() * (i - lse - 1));
-                }
-                value.push(heights[i]);
-                index.push(i);
+            while (!index.isEmpty() && heights[i] < heights[index.peek()]) {
+                int val = heights[index.pop()];
+                int lse = index.isEmpty() ? -1: index.peek();
+                maxArea = Math.max(maxArea, val * (i - lse - 1));
             }
             index.push(i);
-            value.push(heights[i]);
         }
 
         while(!index.isEmpty()) {
-            index.pop();
+            int val = heights[index.pop()];
+            int nse = n;
             int lse = index.isEmpty() ? -1: index.peek();
-            maxArea = Math.max(maxArea, value.pop() * (heights.length - lse - 1));
+            maxArea = Math.max(maxArea, val * (nse - lse - 1));
         }
 
         return maxArea;
