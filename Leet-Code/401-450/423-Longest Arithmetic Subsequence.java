@@ -28,6 +28,44 @@
 // 2 <= nums.length <= 1000
 // 0 <= nums[i] <= 500
 
+// recursion and memoisation
+class Solution {
+    public int longestArithSeqLength(int[] nums) {
+        int n = nums.length;
+        if (n <= 2) return n;
+
+        Map<Integer, Integer> dp[] = new HashMap[n];
+
+        int longest = 0;
+
+        for (int i = 0; i < n; i++) {
+            dp[i] = new HashMap<>();
+            for (int j = i + 1; j < n; j++) {
+                longest = Math.max(longest, 2 + recursion(i, nums[j] - nums[i], nums, dp));
+            }
+        }
+
+        return longest;
+    }
+
+    private int recursion(int i, int diff, int[] nums, Map<Integer, Integer> dp[]) {
+        if (i < 0) return 0;
+
+        if (dp[i].containsKey(diff)) return dp[i].get(diff);
+
+        int ans = 0;
+        for (int j = i - 1; j >= 0; j--) {
+            if (diff == nums[i] - nums[j]) {
+                ans = Math.max(ans, 1 + recursion(j, diff, nums, dp));
+            }
+        }
+
+        dp[i].put(diff, ans);
+        return ans;
+    }
+}
+
+// tabulation
 class Solution {
     public int longestArithSeqLength(int[] nums) {
         int n = nums.length;
