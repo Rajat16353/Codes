@@ -43,3 +43,21 @@ class Solution {
         return -1;
     }
 }
+
+class Solution {
+    public int kthFactor(int n, int k) {
+        for (int i = 1; i < (int)Math.sqrt(n); i++) {
+            if (n % i == 0 && --k == 0) {
+                return i;
+            }
+        }
+
+        for (int i = (int)Math.sqrt(n); i <= n; i++) {
+            if (n % i == 0 && --k == 0) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+}
