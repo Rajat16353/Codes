@@ -65,3 +65,29 @@ class Solution {
         return deleteChars;
     }
 }
+
+class Solution {
+    public int minDeletions(String s) {
+        int[] freqMap = new int[26];
+        for (char c: s.toCharArray()) {
+            freqMap[c - 'a'] += 1;
+        }
+
+        Arrays.sort(freqMap);
+        int deletions = 0;
+
+        for (int i = 24; i >= 0; i--) {
+            if (freqMap[i] == 0) {
+                break;
+            }
+
+            if (freqMap[i] >= freqMap[i + 1]) {
+                int prev = freqMap[i];
+                freqMap[i] = Math.max(0, freqMap[i + 1] - 1);
+                deletions += prev - freqMap[i];
+            }
+        }
+
+        return deletions;
+    }
+}
