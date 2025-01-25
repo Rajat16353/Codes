@@ -105,3 +105,23 @@ class Solution {
         return dp[amount];
     }
 }
+
+// Optimised tabulation
+class Solution {
+    public int change(int amount, int[] coins) {
+        int n = coins.length;
+        int[] dp = new int[amount + 1];
+
+        dp[0] = 1;
+        
+        for (int coin: coins) {
+            for (int amt = 1; amt < dp.length; amt++) {
+                if (amt >= coin) {
+                    dp[amt] += dp[amt - coin];
+                }
+            }
+        }
+
+        return dp[amount];
+    }
+}
